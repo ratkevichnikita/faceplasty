@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --black: #270236;
+  --purple: #C055F7;
+  --orange: #FFE1AB;
 }
 
 body {
@@ -15,4 +17,21 @@ body {
 .container {
   max-width: 87.50vw;
   margin: 0 auto;
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 2.08vw;
+  padding-left: 1.56vw;
+  padding-right: 1.56vw;
+  font-size: 0.83vw;
+  height: 4.17vw;
+  border: 1px solid transparent;
+  transition: 0.3s ease-in;
+}
+
+.button:hover {
+  background: transparent;
 }

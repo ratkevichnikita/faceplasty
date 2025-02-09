@@ -33,7 +33,7 @@ const Header = () => {
               {navigation.map(item => {
                 return (
                   <li key={item.id} className="">
-                    <Link href={item.href} className={"py-[1.09vw] px-[0.63vw]"}>
+                    <Link href={item.href} className={"py-[1.09vw] px-[0.63vw] border-b border-b-transparent hover:border-b-purple transition-border duration-300"}>
                       {item.title}
                     </Link>
                   </li>
@@ -52,7 +52,7 @@ const Header = () => {
               </button>
               <button
                 onClick={() => setAuthModal({ modalType: "login", active: true })}
-                className="text-[0.83vw] h-[3.13vw] text-white font-semibold uppercase bg-purple rounded-[2.08vw] px-[1.56vw]"
+                className="button !h-[3.13vw] bg-purple text-white hover:border-purple hover:text-purple"
               >
                 Log in
               </button>

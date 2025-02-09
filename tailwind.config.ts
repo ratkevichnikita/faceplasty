@@ -8,6 +8,20 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xl: { max: '1460px' },
+      // => @media (max-width: 1527px) { ... }
+      ls: { max: '1024px' },
+
+      lg: { max: '991px' },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: '767px' },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: '540px' },
+      // => @media (max-width: 639px) { ... }
+    },
     extend: {
       fontFamily: {
         'rubik': ['var(--rubik)'],
@@ -15,12 +29,15 @@ export default {
         'lato': ['var(--font-lato)'],
       },
       colors: {
-        purple: '#C055F7',
+        purple: 'var(--purple)',
         white: '#fff',
         black: '#270236',
         error: '#BC0505',
-        orange: '#FFE1AB'
+        orange: 'var(--orange)'
       },
+      boxShadow: {
+        cardShadow: '0px 4px 20px 0px #80808026',
+      }
     },
   },
   plugins: [],
