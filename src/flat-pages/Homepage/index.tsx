@@ -5,6 +5,8 @@ import ImageAbout from '@/../public/images/img-about.webp';
 import IconArrow from '@/../public/icons/icon-arrow-small.svg';
 import SectionEvents from "@/flat-pages/Homepage/components/SectionEvents";
 import SectionCoursesList from "@/flat-pages/Homepage/components/SectionCoursesList";
+import SectionReviews from "@/flat-pages/Homepage/components/SectionReviews";
+import SectionContacts from "@/flat-pages/Homepage/components/SectionContacts";
 
 const Homepage = () => {
   return (
@@ -147,6 +149,19 @@ const Homepage = () => {
         <div className="pt-[2.08vw]">
           <SectionCoursesList />
         </div>
+      </div>
+      {/*SECTION REVIEWS*/}
+      <div className="py-[5.21vw]">
+        <h2 className="font-montserrat text-[2.81vw] uppercase font-bold">
+          Reviews
+        </h2>
+        <div className="pt-[2.08vw]">
+          <SectionReviews />
+        </div>
+      </div>
+      {/*SECTION CONTACTS*/}
+      <div className="py-[5.21vw]">
+        <SectionContacts />
       </div>
     </div>
   );
