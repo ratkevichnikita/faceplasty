@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="py-[1.56vw] font-lato">
       <div className="container">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-[0.75vw]">
           <Link href="/">
             <Image
               src={ImageLogo.src}
@@ -28,7 +28,7 @@ const Header = () => {
               className=""
             />
           </Link>
-          <nav className="pl-[6vw]">
+          <nav className="">
             <ul className="flex items-center text-[0.83vw] gap-[1.04vw] uppercase font-semibold font-lato">
               {navigation.map(item => {
                 return (
@@ -46,13 +46,13 @@ const Header = () => {
             <div className="flex gap-[0.52vw]">
               <button
                 onClick={() => setAuthModal({ modalType: "register", active: true })}
-                className="text-[0.83vw] h-[3.13vw] text-black font-semibold uppercase bg-transparent rounded-[2.08vw] px-[1.30vw]"
+                className="text-[0.83vw] h-[3.13vw] shrink-0 text-black font-semibold uppercase bg-transparent rounded-[2.08vw] px-[1.30vw]"
               >
                 Sign up
               </button>
               <button
                 onClick={() => setAuthModal({ modalType: "login", active: true })}
-                className="button !h-[3.13vw] bg-purple text-white hover:border-purple hover:text-purple"
+                className="button !h-[3.13vw] shrink-0 bg-purple text-white hover:border-purple hover:text-purple"
               >
                 Log in
               </button>

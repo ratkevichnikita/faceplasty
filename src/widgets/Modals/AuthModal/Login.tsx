@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Image from "next/image";
 import BgLogin from '@/../public/images/bg-login.svg';
 import {useAppStore} from "@/shared/store/AppStore";
@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import ImageLogo from "@/../public/icons/icon-logo.svg";
 import IconBack from '@/../public/icons/icon-arrow-back.svg';
+import {loginUser} from "@/shared/api";
+import Spinner from "@/widgets/Spinner";
 
 type FormValues = {
   email: string;
@@ -15,6 +17,8 @@ type FormValues = {
 
 const Login = () => {
   const { setAuthModal } = useAppStore();
+  const [loading,setLoading] = useState<boolean>(false);
+  const [error,setError] = useState<string>('')
 
   const {
     register,
@@ -22,8 +26,23 @@ const Login = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Форма отправлена:", data);
+  const onSubmit = async (data: FormValues) => {
+    console.log('data',data)
+    setLoading(true)
+    try {
+      const response = await loginUser(data.email,data.password);
+      console.log('response',response)
+      if(response) {
+        setAuthModal({ modalType: null, active: false })
+        return
+      }
+      return setError('Incorrect email or password')
+    } catch (error) {
+      console.log('error',error)
+    }
+    finally {
+      setLoading(false)
+    }
   };
 
   return (
@@ -89,7 +108,7 @@ const Login = () => {
                 placeholder="Enter your email"
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 mt-1 text-[0.78vw]">{errors.email.message}</p>
               )}
             </div>
 
@@ -109,17 +128,19 @@ const Login = () => {
                 placeholder="Enter your password"
               />
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+                <p className="text-red-500 mt-1 text-[0.78vw]">{errors.password.message}</p>
               )}
             </div>
-
+            {error && <p className="text-red-500 mt-1 text-[0.78vw]">{error}</p>}
             <div className="w-full text-center pt-[1.04vw]">
               {/* Login Button */}
               <button
                 type="submit"
-                className="w-full bg-orange font-bold h-[4.17vw] rounded-full text-[0.83vw]"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-[0.5vw] bg-orange font-bold h-[4.17vw] rounded-full text-[0.83vw] disabled:opacity-50"
               >
                 LOG IN
+                {loading && <Spinner variant="small" color="black" />}
               </button>
 
               {/* Forgot Password */}
