@@ -10,6 +10,7 @@ import VideoPlayer from "@/widgets/VideoPlayer";
 import TrialButon from "@/widgets/TrialButton";
 import {Product} from "@/shared/api/types/courses";
 import SectionFaq from "@/flat-pages/Homepage/components/SectionFaq";
+import SectionReviews from "@/flat-pages/Homepage/components/SectionReviews";
 
 interface ComponentProps {
   products: Product[] | null
@@ -167,6 +168,18 @@ const Homepage = ({products}:ComponentProps) => {
         </h2>
         <div className="pt-[2.08vw]">
           <SectionFaq />
+        </div>
+      </div>
+      {/*SECTION REVIEWS*/}
+      <div className="py-[5.21vw]">
+        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
+
+        </h2>
+        <div className="">
+          <SectionReviews />
+        </div>
+        <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
+          <TrialButon />
         </div>
       </div>
       {/*SECTION CONTACTS*/}
