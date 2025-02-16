@@ -1,12 +1,12 @@
 import apiClient from "@/shared/api/client";
-import {ApiResponse} from "@/shared/api/types/courses";
+import {ApiResponse, Product} from "@/shared/api/types/courses";
 import {AxiosResponse} from "axios";
 
-export const getCoursesList = async (): Promise<ApiResponse | null> => {
+export const getCoursesList = async (): Promise<Product[] | null> => {
   try {
     const resp: AxiosResponse<ApiResponse> = await apiClient.get('/courses');
     if (resp.data) {
-      return resp.data;
+      return resp.data.body.items;
     }
     return null;
   } catch (error: unknown) {

@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import Image from "next/image";
 import CardProduct from "@/widgets/CardProduct";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,8 +9,27 @@ import ArrowNav from '@/../public/icons/icon-arrow-purple.svg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import clsx from "clsx";
+import {getCoursesList} from "@/shared/api";
+import TrialButon from "@/widgets/TrialButton";
+import {Product} from "@/shared/api/types/courses";
+import {enhanceProductsWithData} from "@/shared/helpers";
+import Spinner from "@/widgets/Spinner";
+import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 
-const SectionCoursesList = () => {
+interface ComponentProps {
+  products: Product[] | null
+}
+
+const SectionCoursesList:FC<ComponentProps> = ({products}) => {
+
+  const enhanceProducts = enhanceProductsWithData(products)
+
+  if(!products || products.length == 0) {
+    return <div className="flex gap-[2.08vw]">
+      {Array.from({length: 4}).map((_, index) => <CardProductSkeleton key={index}/>)}
+    </div>
+  }
+
   return (
     <>
       <Swiper
@@ -78,21 +97,13 @@ const SectionCoursesList = () => {
         }}
         className="font-lato !py-[20px] !my-[-20px] "
       >
-        <SwiperSlide className="">
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <CardProduct />
-        </SwiperSlide>
+        {enhanceProducts?.map(product => {
+          return (
+            <SwiperSlide key={product.id} className="">
+              <CardProduct product={product} />
+            </SwiperSlide>
+          )
+        })}
         <div
           role="button"
           aria-label="Prev Slide"
@@ -126,6 +137,9 @@ const SectionCoursesList = () => {
           />
         </div>
       </Swiper>
+      <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
+        <TrialButon />
+      </div>
     </>
   );
 };

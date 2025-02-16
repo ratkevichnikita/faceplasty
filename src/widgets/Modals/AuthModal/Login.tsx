@@ -59,6 +59,7 @@ const Login = () => {
          </Link>
          <Image
            src={BgLogin.src}
+           sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 47.92vw"
            fill
            alt="background"
            className="object-cover"

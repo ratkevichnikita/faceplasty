@@ -31,13 +31,26 @@ export default {
       colors: {
         purple: 'var(--purple)',
         white: '#fff',
-        black: '#270236',
+        black: '#0A1412',
         error: '#BC0505',
         orange: 'var(--orange)'
       },
       boxShadow: {
         cardShadow: '0px 4px 20px 0px #80808026',
-      }
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.5s linear forwards",
+      },
     },
   },
   plugins: [],

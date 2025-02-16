@@ -1,7 +1,12 @@
 import Homepage from "@/flat-pages/Homepage";
+import {getCoursesList} from "@/shared/api";
 
-export default function Home() {
+const Page = async () => {
+  const products = await getCoursesList();
+
   return (
-    <Homepage />
+    <Homepage products={products} />
   );
 }
+
+export default Page;

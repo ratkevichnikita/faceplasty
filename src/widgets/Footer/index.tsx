@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import IconLogo from "@/../public/icons/icon-logo.svg";
+import IconLogo from "@/../public/icons/icon-logo-white.svg";
 import ImageSecurity from '@/../public/images/img-security.webp'
 import ImageStripe from '@/../public/images/img-stripe.webp'
 import Link from "next/link";
@@ -37,7 +37,7 @@ const Footer = () => {
               width={ImageStripe.width}
               height={ImageStripe.height}
               alt="logo faceplasty"
-              className="w-[10.10vw] h-[2.71vw]"
+              className="w-[10.10vw] h-[2.71vw] object-contain"
             />
           </div>
         </div>

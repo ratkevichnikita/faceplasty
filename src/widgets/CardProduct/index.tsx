@@ -1,19 +1,30 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Image from "next/image";
-import ImageCard from "../../../public/images/img-card.webp";
 import IconStar from '@/../public/icons/icon-star.svg';
 import IconStudent from '@/../public/icons/icon-student.svg';
-import IconArrow from "../../../public/icons/icon-arrow-small.svg";
+import IconDiamond from '@/../public/icons/icon-diamond.svg';
+import {Product} from "@/shared/api/types/courses";
+import clsx from "clsx";
 
-const CardProduct = () => {
+interface ComponentProps {
+  product: Product
+}
+
+const CardProduct:FC<ComponentProps> = ({product}) => {
+  const isPremium = product.price > 140
   return (
-    <div className="rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
+    <div className="relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
+      {isPremium && <div className="flex items-center justify-center absolute left-[1.04vw] top-[1.04vw] bg-orange size-[3.13vw] rounded-full">
+        <Image src={IconDiamond.src} width={IconDiamond.width} height={IconDiamond.height} alt="diamond icon" className="w-[1.82vw] h-[1.41vw]" />
+      </div>}
       <div className=" relative h-[11.46vw] w-full">
         <Image
-          src={ImageCard.src}
+          src={process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}`}
+          sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 20.31vw"
+          priority
           fill
           alt="image"
-          className=" object-cover"
+          className="object-cover"
         />
       </div>
       <div className="">
@@ -25,37 +36,36 @@ const CardProduct = () => {
                   width={IconStar.width}
                   height={IconStar.height}
                   alt="rating icon"
-                  className="w-[0.73vw] h-[0.63vw]"
+                  className="w-[0.73vw] h-[0.63vw] object-contain"
                 />
-                4.9
+                {product.rating}
               </span>
-            <span className="flex items-center gap-[0.31vw] text-[0.73vw] rounded-full px-[0.42vw] border border-[#00000033] h-[1.30vw]">
+              <span className="flex items-center gap-[0.31vw] text-[0.73vw] rounded-full px-[0.42vw] border border-[#00000033] h-[1.30vw]">
                 <Image
                   src={IconStudent.src}
                   width={IconStudent.width}
                   height={IconStudent.height}
                   alt="rating icon"
-                  className="w-[0.73vw] h-[0.63vw]"
+                  className="w-[0.73vw] h-[0.63vw] object-contain"
                 />
-                6453 students
+                {product.students} students
               </span>
           </div>
           <div className="space-y-[0.52vw] ">
-            <p className="font-semibold text-[0.83vw] leading-[1.2em]">ULTIMATE FACE LIFTING</p>
-            <p className="text-[0.73vw] leading-[1.2em] line-clamp-2">
-              Lift your face instantly! A powerful lifting program.
-              Lift your face instantly! A powerful lifting program.
-              Lift your face instantly! A powerful lifting program...
+            <p className="font-semibold text-[0.83vw] leading-[1.2em] line-clamp-1">{product.name}</p>
+            <p className="text-[0.73vw] min-h-[1.72vw] leading-[1.2em] line-clamp-2">
+              {product.description}
             </p>
           </div>
         </div>
         <div className="flex items-center justify-between p-[1.04vw] border-t border-t-[#00000014]">
-          <div className="flex gap-[0.42vw]">
-            <span className="line-through text-[0.83vw] opacity-50">$19</span>
-            <span className="font-bold text-[0.83vw]">$10</span>
-          </div>
-          <button className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[10.05vw] h-[3.13vw] block uppercase ml-auto font-semibold text-[0.83vw] text-center border border-[#00000014]">
-            Buy course
+           <button className={clsx("bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white", {
+             'bg-orange': isPremium
+           })}>
+             BUY ${product.price}
+           </button>
+          <button className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[11.67vw] h-[3.13vw] block uppercase ml-auto font-semibold text-[0.83vw] text-center border border-[#00000014]">
+            Jump to course
             <span className="rounded-full flex items-center justify-center bg-purple size-[2.08vw] ">
               <span className="w-[0.89vw] h-[0.63vw] transition-transform duration-300 group-hover:rotate-[45deg]">
                 <svg width="100%" height="100%" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">

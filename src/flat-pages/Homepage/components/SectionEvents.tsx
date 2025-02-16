@@ -32,7 +32,7 @@ const SectionEvents = () => {
             alt="image"
           />
           <div className="p-[1.04vw] space-y-[1.04vw]">
-            <span className="bg-[#DFA9FE] rounded-[2.08vw] font-medium text-[0.83vw] text-center px-[1.04vw] py-[0.31vw]">8 JAN 12:00</span>
+            <span className="bg-purple text-white rounded-[2.08vw] font-medium text-[0.83vw] text-center px-[1.04vw] py-[0.31vw]">8 JAN 12:00</span>
            <div className="space-y-[0.52vw] ">
              <p className="font-semibold text-[0.83vw]">ULTIMATE FACE LIFTING</p>
              <p className="text-[0.73vw] leading-[1.2em]">

@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import ImageLogo from '@/../public/icons/icon-logo-black.png'
+import ImageLogo from '@/../public/icons/icon-logo.svg'
 import SearchForm from "@/widgets/SearchForm";
 import {useAppStore} from "@/shared/store/AppStore";
 
@@ -25,7 +25,7 @@ const Header = () => {
               width={ImageLogo.width}
               height={ImageLogo.height}
               alt="faceplasty logo"
-              className=""
+              className="w-[17.45vw] h-[4.84vw]"
             />
           </Link>
           <nav className="">
@@ -52,7 +52,7 @@ const Header = () => {
               </button>
               <button
                 onClick={() => setAuthModal({ modalType: "login", active: true })}
-                className="button !h-[3.13vw] shrink-0 bg-purple text-white hover:border-purple hover:text-purple"
+                className="button !h-[3.13vw] shrink-0 bg-purple text-white hover:bg-black hover:text-white"
               >
                 Log in
               </button>
