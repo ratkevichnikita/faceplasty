@@ -9,11 +9,9 @@ import ArrowNav from '@/../public/icons/icon-arrow-purple.svg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import clsx from "clsx";
-import {getCoursesList} from "@/shared/api";
 import TrialButon from "@/widgets/TrialButton";
 import {Product} from "@/shared/api/types/courses";
 import {enhanceProductsWithData} from "@/shared/helpers";
-import Spinner from "@/widgets/Spinner";
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 
 interface ComponentProps {
@@ -22,13 +20,13 @@ interface ComponentProps {
 
 const SectionCoursesList:FC<ComponentProps> = ({products}) => {
 
-  const enhanceProducts = enhanceProductsWithData(products)
-
   if(!products || products.length == 0) {
     return <div className="flex gap-[2.08vw]">
       {Array.from({length: 4}).map((_, index) => <CardProductSkeleton key={index}/>)}
     </div>
   }
+
+  const enhanceProducts = enhanceProductsWithData(products)
 
   return (
     <>

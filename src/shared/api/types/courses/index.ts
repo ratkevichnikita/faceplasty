@@ -26,8 +26,8 @@ export interface Product {
   primaryImage: object | null,
   category: null,
   image: Image
-  rating?: string
-  students?: string
+  rating?: number
+  students?: number
 }
 
 interface Filter {

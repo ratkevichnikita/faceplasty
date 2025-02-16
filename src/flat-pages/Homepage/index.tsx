@@ -4,19 +4,19 @@ import ImageMain from '@/../public/images/image-header.webp';
 import IconArrow from '@/../public/icons/icon-arrow-small.svg';
 import SectionEvents from "@/flat-pages/Homepage/components/SectionEvents";
 import SectionCoursesList from "@/flat-pages/Homepage/components/SectionCoursesList";
-import SectionReviews from "@/flat-pages/Homepage/components/SectionReviews";
+import SectionBeforeAfter from "@/flat-pages/Homepage/components/SectionBeforeAfter";
 import SectionContacts from "@/flat-pages/Homepage/components/SectionContacts";
 import VideoPlayer from "@/widgets/VideoPlayer";
 import TrialButon from "@/widgets/TrialButton";
 import {Product} from "@/shared/api/types/courses";
-import Spinner from "@/widgets/Spinner";
+import SectionFaq from "@/flat-pages/Homepage/components/SectionFaq";
 
 interface ComponentProps {
   products: Product[] | null
 }
 
 const Homepage = ({products}:ComponentProps) => {
-  console.log('(products && products?.length > 0 )',products )
+
   return (
     <div className="container ">
       {/*MAIN SECTION */}
@@ -132,7 +132,7 @@ const Homepage = ({products}:ComponentProps) => {
       </div>
       {/*SECTION COURSES*/}
       <div className="py-[5.21vw]">
-        <h2 className="font-montserrat text-[2.81vw] uppercase font-medium">
+        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
           Course Library
         </h2>
         <div className="pt-[2.08vw]">
@@ -141,7 +141,7 @@ const Homepage = ({products}:ComponentProps) => {
       </div>
       {/*SECTION EVENTS */}
       <div className="py-[5.21vw]">
-        <h2 className="font-montserrat text-[2.81vw] uppercase font-medium">
+        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
           Our Future Events
         </h2>
         <div className="pt-[2.08vw]">
@@ -150,14 +150,23 @@ const Homepage = ({products}:ComponentProps) => {
       </div>
       {/*SECTION REVIEWS*/}
       <div className="py-[5.21vw]">
-        <h2 className="font-montserrat text-[2.81vw] uppercase font-medium">
+        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
           Reviews
         </h2>
         <div className="pt-[2.08vw]">
-          <SectionReviews />
+          <SectionBeforeAfter />
         </div>
         <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
           <TrialButon />
+        </div>
+      </div>
+      {/*SECTION FAQ*/}
+      <div className="py-[5.21vw]">
+        <h2 className="max-w-[42.71vw] leading-[1.2em] mx-auto font-montserrat text-[2.81vw] text-center uppercase font-medium">
+          Frequently Asked Questions
+        </h2>
+        <div className="pt-[2.08vw]">
+          <SectionFaq />
         </div>
       </div>
       {/*SECTION CONTACTS*/}
