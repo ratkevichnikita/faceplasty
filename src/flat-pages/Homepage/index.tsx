@@ -22,16 +22,16 @@ const Homepage = ({products}:ComponentProps) => {
     <div className="container ">
       {/*MAIN SECTION */}
       <div className="pt-[5.21vw] pb-[4.17vw]">
-        <div className="flex justify-between items-end">
-          <div className="space-y-[2.08vw] max-w-[36.42vw]">
+        <div className="flex justify-between items-end gap-[2.3vw]">
+          <div className="space-y-[2.08vw] max-w-[42.71vw]">
             <h1 className="font-montserrat text-[2.81vw] leading-[1.7em] font-medium uppercase">
               <span className="text-[4.48vw] block">MINDBODYFACE</span>
               better every day
             </h1>
-            <p className="font-rubik max-w-[32.29vw] text-[0.83vw] leading-[1.2em]">
-              A transformative space where Dr. Ales and his team guide you in mastering holistic self-care for lasting health, beauty and longevity — mind, body, and face! With our proven methods and techniques,
-              you’ll look younger, feel more energized, and experience true happiness.
-              Because self-care isn’t just about appearance — it’s about living longer, feeling your best, and truly thriving every single day!
+            <p className="font-rubik max-w-[38.85vw] text-[2.08vw] leading-[1.2em] opacity-[84%]">
+              Medically proven methods and techniques to look younger, boost your energy, <br/>
+              and experience true happiness
+              <br/> every single day!
             </p>
             <div className="flex items-center gap-[1.04vw]">
               <button className="bg-purple text-white button hover:bg-black hover:text-white">
@@ -50,13 +50,15 @@ const Homepage = ({products}:ComponentProps) => {
                 </span>
               </button>
               <p className="text-[0.83vw] font-rubik max-w-[8.85vw] opacity-[70%]">
-                <span className="font-bold">Free one-week trial</span>, then $47/month
+                Get a trial week for $1,
+                then $47/month
               </p>
             </div>
           </div>
           <div className="relative">
-            <div className="bg-black font-lato absolute right-0 flex flex-col items-center justify-center rounded-[2.08vw] h-[7.29vw] w-[13.65vw]">
-              <p className="text-[2.08vw] text-white font-bold leading-[1.2em] uppercase">Dr. Ales </p>
+            <div className="bg-black font-lato absolute right-0 flex flex-col items-center justify-center rounded-[2.08vw] h-[7.45vw] w-[13.8vw]">
+              <p className="text-[2.08vw] text-center text-white font-medium leading-[1.2em]">Dr. Ales
+                Ulishchenko</p>
               <p className="text-[0.83vw] font-medium leading-[1.2em] text-white opacity-[80%]">Founder & Main Expert</p>
             </div>
             <Image
@@ -68,76 +70,79 @@ const Homepage = ({products}:ComponentProps) => {
               className="w-[41.93vw] h-[30.99vw]"
             />
             <div className="space-y-[0.83vw] absolute bottom-0">
-              <div className="bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[7.29vw] w-[11.77vw]">
-                <p className="text-[2.08vw] font-bold leading-[1.2em] uppercase">PhD </p>
-                <p className="text-[0.83vw] font-medium leading-[1.2em]">in Medicine</p>
+              <div className="bg-[#E5E5E5] text-center flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[7.29vw] w-[12.76vw]">
+                <p className="text-[2.08vw] font-medium leading-[1.2em] uppercase opacity-80">PhD </p>
+                <p className="text-[0.83vw] font-medium leading-[1.2em] opacity-80">Doctor of Medicine, <br/>
+                  Osteopath & Plastic Surgeon</p>
               </div>
-              <div className="bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[7.29vw] w-[11.77vw]">
-                <p className="text-[2.08vw] font-bold leading-[1.2em] uppercase">30+  </p>
-                <p className="text-[0.83vw] font-medium leading-[1.2em]">online courses</p>
+              <div className="bg-[#E5E5E5] text-center flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[7.29vw] w-[12.76vw]">
+                <p className="text-[2.08vw] font-medium leading-[1.2em] uppercase opacity-80">4,000,000 </p>
+                <p className="text-[0.83vw] font-medium leading-[1.2em] opacity-80">Followers And 100K+ <br/> Students Worldwide</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       {/*SECTION ABOUT */}
-      <div className="py-[5.21vw]">
+      <div id="about" className="py-[5.21vw]">
+        <div className="w-[38.54vw] mb-[1.48vw]">
+          <h2 className="font-montserrat text-[2.81vw] leading-[1.2em] mb-[1.04vw] font-medium uppercase">
+            Join our <br/> rejuvenation club
+          </h2>
+          <p className="text-[2.08vw] font-rubik leading-[1.2em] opacity-[80%]">
+            Take the first step towards a healthier, more balanced you today!
+          </p>
+        </div>
         <div className="flex items-end gap-[2.76vw]">
           <div className="relative">
             <VideoPlayer />
           </div>
-          <div className="max-w-[42.45vw] w-full">
-            <h2 className="font-montserrat text-[2.81vw] leading-[1.2em] mb-[1.04vw] font-medium uppercase">
-              Join our <br/> rejuvenation club
-            </h2>
-            <p className="text-[0.83vw] font-rubik leading-[1.2em] mb-[2.08vw]">
-              Join our club and discover how easy it can be to make self-care a natural part of your daily routine.
-              From expert tips to exclusive resources,
-              we’re here to guide and inspire you along the way. Take the first step towards a healthier, more balanced you today!
-            </p>
-            <div className="flex items-center gap-[1.04vw]">
-              <button className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
-                become a member
-                <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
-                  <Image
-                    src={IconArrow.src}
-                    width={IconArrow.width}
-                    height={IconArrow.height}
-                    alt="image"
-                    className="w-[0.89vw] h-[0.63vw]"
-                  />
-                </span>
-              </button>
-              <p className="text-[0.83vw] font-rubik max-w-[8.85vw] opacity-[70%]">
-                <span className="font-bold">Free one-week trial</span>, then $47/month
-              </p>
-            </div>
+          <div className="max-w-[31.77vw] w-full">
+            <ul className="flex flex-col gap-[1.04vw] text-center font-lato">
+              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">6 WEEKLY <br/> workouts</p>
+                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">With top trainers. Each session lasts 15–20 minutes</p>
+              </li>
+              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">Full access for all <br/> courses </p>
+                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]"> In 7 days, you'll gain access to all our knowledge and experience</p>
+              </li>
+              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">community <br/> of like-minded people</p>
+                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">Whatsap chat with our experts</p>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="pt-[2.08vw]">
-          <ul className="flex gap-[2.60vw] text-center font-lato">
-            <li className="bg-[#E5E5E5] h-[14.84vw] w-[27.71vw] rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
-              <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] uppercase">6 WEEKLY <br/> workouts</p>
-              <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">With top trainers. Each session lasts 15–20 minutes</p>
-            </li>
-            <li className="bg-[#E5E5E5] h-[14.84vw] w-[27.71vw] rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
-              <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] uppercase">FULL ACCESS FOR all <br/> courses </p>
-              <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]"> In 7 days, you'll gain access to all our knowledge and experience</p>
-            </li>
-            <li className="bg-[#E5E5E5] h-[14.84vw] w-[27.71vw] rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
-              <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] uppercase">community <br/> of like-minded <br/> people</p>
-              <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">Whatsap chat with our experts</p>
-            </li>
-          </ul>
+        <div className="flex items-center gap-[1.04vw] pt-[1.48vw]">
+          <button className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
+            become a member
+            <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
+                <Image
+                  src={IconArrow.src}
+                  width={IconArrow.width}
+                  height={IconArrow.height}
+                  alt="image"
+                  className="w-[0.89vw] h-[0.63vw]"
+                />
+              </span>
+          </button>
+          <p className="text-[0.83vw] font-rubik max-w-[17.85vw] opacity-[70%]">
+            One-week trial for $1, then $47/month. <br/>
+            You can cancel your subscription at any time.
+          </p>
         </div>
       </div>
       {/*SECTION COURSES*/}
-      <div className="py-[5.21vw]">
+      <div id="courses" className="py-[5.21vw]">
         <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
           Course Library
         </h2>
         <div className="pt-[2.08vw]">
           <SectionCoursesList products={products}/>
+          <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
+            <TrialButon />
+          </div>
         </div>
       </div>
       {/*SECTION EVENTS */}
@@ -152,7 +157,7 @@ const Homepage = ({products}:ComponentProps) => {
       {/*SECTION REVIEWS*/}
       <div className="py-[5.21vw]">
         <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
-          Reviews
+          Before / After
         </h2>
         <div className="pt-[2.08vw]">
           <SectionBeforeAfter />
@@ -162,7 +167,7 @@ const Homepage = ({products}:ComponentProps) => {
         </div>
       </div>
       {/*SECTION FAQ*/}
-      <div className="py-[5.21vw]">
+      <div id="faq" className="py-[5.21vw]">
         <h2 className="max-w-[42.71vw] leading-[1.2em] mx-auto font-montserrat text-[2.81vw] text-center uppercase font-medium">
           Frequently Asked Questions
         </h2>
@@ -173,7 +178,7 @@ const Homepage = ({products}:ComponentProps) => {
       {/*SECTION REVIEWS*/}
       <div className="py-[5.21vw]">
         <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
-
+          Reviews
         </h2>
         <div className="">
           <SectionReviews />
@@ -183,7 +188,7 @@ const Homepage = ({products}:ComponentProps) => {
         </div>
       </div>
       {/*SECTION CONTACTS*/}
-      <div className="py-[5.21vw]">
+      <div id="contacts" className="py-[5.21vw]">
         <SectionContacts />
       </div>
     </div>

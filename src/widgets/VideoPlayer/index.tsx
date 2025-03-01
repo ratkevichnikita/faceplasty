@@ -26,7 +26,7 @@ const VideoPlayer = () => {
 
   return (
     <div
-      className="relative w-full max-w-4xl mx-auto"
+      className="relative w-full w-[53.33vw] h-[30.42vw]"
       onMouseEnter={() => isPlaying && setShowOverlay(true)}
       onMouseLeave={() => isPlaying && setShowOverlay(false)}
     >
@@ -38,7 +38,7 @@ const VideoPlayer = () => {
         disablePictureInPicture
         controls={isPlaying}
         controlsList="nodownload nofullscreen noremoteplayback"
-        className="rounded-[2.08vw] overflow-hidden w-full"
+        className="absolute left-0 top-0 rounded-[2.08vw] overflow-hidden w-full h-hull"
       />
 
       {showOverlay && (

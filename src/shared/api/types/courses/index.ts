@@ -9,6 +9,13 @@ interface Image {
   extension: string
 }
 
+export enum CategoryName {
+  BODY = "BODY",
+  FACE = "FACE",
+  CLUB = "CLUB",
+  MIND = "MIND",
+}
+
 export interface Product {
   id: string | null,
   name: string | null,
@@ -24,7 +31,10 @@ export interface Product {
   price: number | null,
   currency: string | null,
   primaryImage: object | null,
-  category: null,
+  category: {
+    id: string
+    name: string
+  } | null,
   image: Image
   rating?: number
   students?: number

@@ -9,7 +9,6 @@ import ArrowNav from '@/../public/icons/icon-arrow-purple.svg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import clsx from "clsx";
-import TrialButon from "@/widgets/TrialButton";
 import {Product} from "@/shared/api/types/courses";
 import {enhanceProductsWithData} from "@/shared/helpers";
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
@@ -26,7 +25,18 @@ const SectionCoursesList:FC<ComponentProps> = ({products}) => {
     </div>
   }
 
-  const enhanceProducts = enhanceProductsWithData(products)
+  const enhanceProducts:Product[] = enhanceProductsWithData(products);
+
+  const uniqueCategories = Array.from(
+    enhanceProducts
+      .reduce((map, product) => {
+        if (product.category && !map.has(product.category.id)) {
+          map.set(product.category.id, product.category.name);
+        }
+        return map;
+      }, new Map<string, string>())
+  )
+    .map(([id, name]) => ({ id, name }));
 
   return (
     <>
@@ -40,21 +50,34 @@ const SectionCoursesList:FC<ComponentProps> = ({products}) => {
         }}
         className="font-lato !px-[4.08vw] !mb-[2.08vw]"
       >
-
-        {Array.from({ length: 10 }).map((_, index) => (
-          <SwiperSlide key={index} className="!h-[3.13vw] !w-[10.73vw]">
-            <button
-              className={clsx(
-                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw]",
-                {
-                  "bg-purple text-white": false,
-                }
-              )}
-            >
-              <p className="text-[0.83vw] uppercase font-bold leading-[1.2em]">body</p>
-            </button>
-          </SwiperSlide>
-        ))}
+        <SwiperSlide className="!h-[3.13vw] !w-[10.73vw]">
+          <button
+            className={clsx(
+              "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw]",
+              {
+                "bg-purple text-white": false,
+              }
+            )}
+          >
+            <p className="text-[0.83vw] uppercase font-bold leading-[1.2em]">bestseller</p>
+          </button>
+        </SwiperSlide>
+        {uniqueCategories?.map(p => {
+          return (
+            <SwiperSlide key={p.id} className="!h-[3.13vw] !w-[10.73vw]">
+              <button
+                className={clsx(
+                  "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw]",
+                  {
+                    "bg-purple text-white": false,
+                  }
+                )}
+              >
+                <p className="text-[0.83vw] uppercase font-bold leading-[1.2em]">{p.name}</p>
+              </button>
+            </SwiperSlide>
+          )
+        })}
 
         <div
           role="button"
@@ -135,9 +158,6 @@ const SectionCoursesList:FC<ComponentProps> = ({products}) => {
           />
         </div>
       </Swiper>
-      <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
-        <TrialButon />
-      </div>
     </>
   );
 };
