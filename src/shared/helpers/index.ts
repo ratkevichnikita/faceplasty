@@ -15,12 +15,15 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
   }
 
   const storedData = JSON.parse(localStorage.getItem("courseData") || "[]");
+  const BESTSELLER_COURSE_ID = "YlOCqtnHD0iy47m1i-N-4w"; // Айди бестселлера
 
-  const updatedCourses = products
-    ?.filter((product) =>
+  return products
+    ?.filter(
+      (product) =>
         product.category &&
         product.category.name &&
-        Object.values(CategoryName).includes(product.category.name as CategoryName))
+        Object.values(CategoryName).includes(product.category.name as CategoryName)
+    )
     .map((course) => {
       let existingData = storedData.find((item: { id: string }) => item.id === course.id);
 
@@ -33,17 +36,18 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
         storedData.push(existingData);
       }
 
+      // Проверяем, есть ли в product.contents нужный courseId
+      const isPremium = course.contents?.some(content => content.courseId === BESTSELLER_COURSE_ID) || false;
+
       return {
         ...course,
         rating: existingData.rating,
         students: existingData.students,
+        isPremium, // Добавляем флаг isPremium
       };
     });
-
-  localStorage.setItem("courseData", JSON.stringify(storedData));
-
-  return updatedCourses;
 };
+
 
 export function getHref(value: string): string | null {
   const match = value.match(/https?:\/\/[^\s]+/);

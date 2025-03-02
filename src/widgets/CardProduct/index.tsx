@@ -14,12 +14,11 @@ interface ComponentProps {
 }
 
 const CardProduct:FC<ComponentProps> = ({product}) => {
-  const isPremium = product.price > 140
   const href = getHref(product?.internalName ?? '')
   const imageUrl = product.image?.cloudKey ? process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}` : ImageNoImg.src
   return (
-    <div className="relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
-      {isPremium && <div className="flex items-center justify-center absolute left-[1.04vw] top-[1.04vw] bg-orange size-[3.13vw] rounded-full">
+    <div className="animate-fadeIn relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
+      {product.isPremium && <div className="flex items-center justify-center absolute left-[1.04vw] top-[1.04vw] bg-orange size-[3.13vw] rounded-full z-[2]">
         <Image src={IconDiamond.src} width={IconDiamond.width} height={IconDiamond.height} alt="diamond icon" className="w-[1.82vw] h-[1.41vw]" />
       </div>}
       <div className=" relative h-[11.46vw] w-full">
@@ -65,7 +64,7 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
         </div>
         <div className="flex items-center justify-between p-[1.04vw] border-t border-t-[#00000014]">
            <button className={clsx("bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white", {
-             'bg-orange': isPremium
+             '!bg-orange': product.isPremium
            })}>
              BUY ${product.price}
            </button>

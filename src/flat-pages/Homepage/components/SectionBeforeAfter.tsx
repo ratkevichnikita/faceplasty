@@ -74,6 +74,7 @@ const SectionBeforeAfter = () => {
             <Image
               src={r.image}
               fill
+              sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 28.31vw"
               alt="image"
               className="object-cover"
             />

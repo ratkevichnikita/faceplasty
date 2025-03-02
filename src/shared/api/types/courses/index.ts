@@ -16,6 +16,34 @@ export enum CategoryName {
   MIND = "MIND",
 }
 
+export const BESTSELLER_COURSE_ID = "YlOCqtnHD0iy47m1i-N-4w";
+
+export interface Scenario {
+  "id": string,
+  "name": string | null,
+  "courseItem": string | null,
+  "targetId": string | null,
+  "flow": string | null,
+  "type": string | null,
+  "schoolId": string | null,
+  "isActive": boolean,
+  "description": string | null,
+  "course": string | null,
+  "courseId": string | null,
+  "widgetId": string | null,
+  "product": {
+    "id": string
+  },
+  "productId": string
+}
+
+export interface Contents {
+  "id": string
+  "type": string
+  "courseId": string
+  "productId": string
+}
+
 export interface Product {
   id: string | null,
   name: string | null,
@@ -38,6 +66,9 @@ export interface Product {
   image: Image
   rating?: number
   students?: number
+  scenario: Scenario
+  contents: Contents[]
+  isPremium?: boolean
 }
 
 interface Filter {

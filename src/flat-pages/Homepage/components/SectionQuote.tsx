@@ -9,6 +9,7 @@ const SectionQuote = () => {
         <Image
           src={ImageQuote.src}
           fill
+          sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 31.25vw"
           alt="image with quote"
           className="object-cover"
         />

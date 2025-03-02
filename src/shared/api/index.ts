@@ -4,7 +4,7 @@ import {AxiosResponse} from "axios";
 
 export const getCoursesList = async (): Promise<Product[] | null> => {
   try {
-    const resp: AxiosResponse<ApiResponse> = await apiClient.get('/courses');
+    const resp: AxiosResponse<ApiResponse> = await apiClient.get('/products');
     if (resp.data) {
       return resp.data.body.items;
     }
