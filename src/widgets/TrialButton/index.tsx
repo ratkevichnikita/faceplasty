@@ -1,9 +1,13 @@
 'use client'
-import React from "react";
+import React, {FC} from "react";
 import Image from "next/image";
-import IconArrow from "../../../public/icons/icon-arrow-small.svg";
+import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 
-const TrialButton = () => {
+interface ComponentProps {
+  text?: string
+}
+
+const TrialButton:FC<ComponentProps> = ({text= "Become a member"}) => {
   const handleClick = () => {
     document.body.classList.toggle("isPaymentOpen");
     // Проверяем, не был ли скрипт уже загружен
@@ -26,9 +30,9 @@ const TrialButton = () => {
     <>
       <button
         onClick={handleClick}
-        className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange"
+        className="block button bg-orange h-[4.17vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange"
       >
-        become a member
+        {text}
         <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
           <Image
             src={IconArrow.src}

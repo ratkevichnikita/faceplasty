@@ -33,10 +33,18 @@ export default {
         white: '#fff',
         black: '#0A1412',
         error: '#BC0505',
+        main: '#5F998A',
         orange: 'var(--orange)'
       },
       boxShadow: {
         cardShadow: '0px 4px 20px 0px #80808026',
+      },
+      backgroundColor: {
+        green: '#5F998A',
+        gray: 'rgba(30,30,30,0.2)'
+      },
+      backgroundImage: {
+        main: 'linear-gradient(to bottom, #5F998A, #0D574F)'
       },
       keyframes: {
         fadeIn: {

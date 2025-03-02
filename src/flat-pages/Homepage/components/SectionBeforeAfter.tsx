@@ -8,8 +8,6 @@ import ImageReviews3 from "@/../public/images/reviews/img-review3.webp";
 import ImageReviews4 from "@/../public/images/reviews/img-review4.webp";
 import ImageReviews5 from "@/../public/images/reviews/img-review5.webp";
 import ImageReviews6 from "@/../public/images/reviews/img-review6.webp";
-import ImageReviews7 from "@/../public/images/reviews/img-review7.webp";
-import ImageReviews8 from "@/../public/images/reviews/img-review8.webp";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -55,17 +53,7 @@ const reviewsData:IReviewsData[] = [
     text: 'Swelling has disappeared from the face, the belly has reduced, the double chin has diminished, posture has improved, and the face looks younger.',
     id: 6,
     image: ImageReviews6,
-  },
-  {
-    text: 'Facial contours appear more defined, skin texture looks smoother, and the overall face appears refreshed and more balanced.',
-    id: 7,
-    image: ImageReviews7,
-  },
-  {
-    text: 'The puffiness around the eyes and cheeks has become much less noticeable, and the face looks healthier.',
-    id: 8,
-    image: ImageReviews8,
-  },
+  }
 ]
 
 const SectionBeforeAfter = () => {
@@ -73,23 +61,22 @@ const SectionBeforeAfter = () => {
     <>
       <Swiper
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView="auto"
         modules={[Navigation]}
         navigation={{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }}
-        className="font-lato !py-[20px] !my-[-20px]"
+        className="animate-fadeIn font-lato !py-[20px] !my-[-20px]"
       >
         {reviewsData.map(r => (
-          <SwiperSlide key={r.id} className="rounded-[2.08vw] p-[2.08vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
-            <div className="space-y-[2.08vw]">
-              <Image
-                src={r.image}
-                alt="image"
-              />
-              <p className="text-[0.83vw] leading-[1.2em] min-h-[3.96vw]">{r.text}</p>
-            </div>
+          <SwiperSlide key={r.id} className="relative !w-[28.49vw] !h-[20.10vw] rounded-[2.08vw] overflow-hidden shadow-cardShadow">
+            <Image
+              src={r.image}
+              fill
+              alt="image"
+              className="object-cover"
+            />
           </SwiperSlide>
         ))}
         <div

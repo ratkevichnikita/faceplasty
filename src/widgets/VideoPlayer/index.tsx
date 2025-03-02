@@ -26,7 +26,7 @@ const VideoPlayer = () => {
 
   return (
     <div
-      className="relative w-full w-[53.33vw] h-[30.42vw]"
+      className="relative size-full"
       onMouseEnter={() => isPlaying && setShowOverlay(true)}
       onMouseLeave={() => isPlaying && setShowOverlay(false)}
     >

@@ -65,7 +65,7 @@ const SectionReviews = () => {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }}
-        className="font-lato !py-[20px] !my-[-20px]"
+        className="animate-fadeIn font-lato !py-[20px] !my-[-20px]"
       >
         {reviewsData.map(r => (
           <SwiperSlide key={r.id} className="rounded-[2.08vw] p-[2.08vw] overflow-hidden border border-[#00000014] shadow-cardShadow">

@@ -4,13 +4,14 @@ import ImageMain from '@/../public/images/image-header.webp';
 import IconArrow from '@/../public/icons/icon-arrow-small.svg';
 import SectionEvents from "@/flat-pages/Homepage/components/SectionEvents";
 import SectionCoursesList from "@/flat-pages/Homepage/components/SectionCoursesList";
-import SectionBeforeAfter from "@/flat-pages/Homepage/components/SectionBeforeAfter";
 import SectionContacts from "@/flat-pages/Homepage/components/SectionContacts";
 import VideoPlayer from "@/widgets/VideoPlayer";
 import TrialButon from "@/widgets/TrialButton";
 import {Product} from "@/shared/api/types/courses";
 import SectionFaq from "@/flat-pages/Homepage/components/SectionFaq";
-import SectionReviews from "@/flat-pages/Homepage/components/SectionReviews";
+import SectionCombine from "@/flat-pages/Homepage/components/SectionCombine";
+import SectionQuote from "@/flat-pages/Homepage/components/SectionQuote";
+import SectionWithMap from "@/flat-pages/Homepage/components/SectionWithMap";
 
 interface ComponentProps {
   products: Product[] | null
@@ -22,7 +23,7 @@ const Homepage = ({products}:ComponentProps) => {
     <div className="container ">
       {/*MAIN SECTION */}
       <div className="pt-[5.21vw] pb-[4.17vw]">
-        <div className="flex justify-between items-end gap-[2.3vw]">
+        <div className="flex justify-between items-end gap-[2.60vw]">
           <div className="space-y-[2.08vw] max-w-[42.71vw]">
             <h1 className="font-montserrat text-[2.81vw] leading-[1.7em] font-medium uppercase">
               <span className="text-[4.48vw] block">MINDBODYFACE</span>
@@ -34,12 +35,12 @@ const Homepage = ({products}:ComponentProps) => {
               <br/> every single day!
             </p>
             <div className="flex items-center gap-[1.04vw]">
-              <button className="bg-purple text-white button hover:bg-black hover:text-white">
+              <button className="bg-purple !px-[1.56vw] text-white button hover:bg-black hover:text-white">
                 ALL COURSES
               </button>
               <button className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
-                become a member
-                <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
+                <span className="shrink-0">become a member</span>
+                <span className="rounded-full shrink-0 flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
                   <Image
                     src={IconArrow.src}
                     width={IconArrow.width}
@@ -93,21 +94,21 @@ const Homepage = ({products}:ComponentProps) => {
             Take the first step towards a healthier, more balanced you today!
           </p>
         </div>
-        <div className="flex items-end gap-[2.76vw]">
-          <div className="relative">
+        <div className="flex gap-[2.76vw]">
+          <div className="relative w-[53.33vw] h-[30.42vw]">
             <VideoPlayer />
           </div>
           <div className="max-w-[31.77vw] w-full">
             <ul className="flex flex-col gap-[1.04vw] text-center font-lato">
-              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+              <li className="bg-[#E5E5E5] h-[9.18vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
                 <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">6 WEEKLY <br/> workouts</p>
                 <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">With top trainers. Each session lasts 15–20 minutes</p>
               </li>
-              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+              <li className="bg-[#E5E5E5] h-[9.18vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
                 <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">Full access for all <br/> courses </p>
                 <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]"> In 7 days, you'll gain access to all our knowledge and experience</p>
               </li>
-              <li className="bg-[#E5E5E5] h-[9.38vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
+              <li className="bg-[#E5E5E5] h-[9.18vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center">
                 <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw]">community <br/> of like-minded people</p>
                 <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw]">Whatsap chat with our experts</p>
               </li>
@@ -115,8 +116,8 @@ const Homepage = ({products}:ComponentProps) => {
           </div>
         </div>
         <div className="flex items-center gap-[1.04vw] pt-[1.48vw]">
-          <button className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
-            become a member
+          <button className="bg-orange !px-[4.69vw] text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
+            join the club
             <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
                 <Image
                   src={IconArrow.src}
@@ -127,7 +128,7 @@ const Homepage = ({products}:ComponentProps) => {
                 />
               </span>
           </button>
-          <p className="text-[0.83vw] font-rubik max-w-[17.85vw] opacity-[70%]">
+          <p className="text-[0.83vw] font-rubik max-w-[19.85vw] opacity-[70%]">
             One-week trial for $1, then $47/month. <br/>
             You can cancel your subscription at any time.
           </p>
@@ -141,7 +142,7 @@ const Homepage = ({products}:ComponentProps) => {
         <div className="pt-[2.08vw]">
           <SectionCoursesList products={products}/>
           <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
-            <TrialButon />
+            <TrialButon text="try all courses for $1" />
           </div>
         </div>
       </div>
@@ -154,17 +155,24 @@ const Homepage = ({products}:ComponentProps) => {
           <SectionEvents />
         </div>
       </div>
-      {/*SECTION REVIEWS*/}
+      {/*SECTION COMBINE */}
       <div className="py-[5.21vw]">
-        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
-          Before / After
-        </h2>
-        <div className="pt-[2.08vw]">
-          <SectionBeforeAfter />
-        </div>
+        <SectionCombine />
         <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
-          <TrialButon />
+          <TrialButon text="start your transformation" />
         </div>
+      </div>
+      {/*SECTION WITH QUOTE*/}
+      <div className="py-[4.69vw]">
+        <SectionQuote />
+      </div>
+      {/*SECTION WITH MAP*/}
+      <div className="pt-0">
+        <SectionWithMap />
+      </div>
+      {/*SECTION CONTACTS*/}
+      <div id="contacts" className="py-[5.21vw]">
+        <SectionContacts />
       </div>
       {/*SECTION FAQ*/}
       <div id="faq" className="py-[5.21vw]">
@@ -174,22 +182,6 @@ const Homepage = ({products}:ComponentProps) => {
         <div className="pt-[2.08vw]">
           <SectionFaq />
         </div>
-      </div>
-      {/*SECTION REVIEWS*/}
-      <div className="py-[5.21vw]">
-        <h2 className="font-montserrat leading-[1.2em] text-[2.81vw] uppercase font-medium">
-          Reviews
-        </h2>
-        <div className="">
-          <SectionReviews />
-        </div>
-        <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw]">
-          <TrialButon />
-        </div>
-      </div>
-      {/*SECTION CONTACTS*/}
-      <div id="contacts" className="py-[5.21vw]">
-        <SectionContacts />
       </div>
     </div>
   );
