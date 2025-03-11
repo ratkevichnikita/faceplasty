@@ -11,6 +11,7 @@ import clsx from "clsx";
 import {BESTSELLER_COURSE_ID, Product} from "@/shared/api/types/courses";
 import { enhanceProductsWithData } from "@/shared/helpers";
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
+import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   products: Product[] | null;
@@ -18,6 +19,7 @@ interface ComponentProps {
 
 const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
 
+  const {setProducts} = useAppStore()
   const [enhancedProducts, setEnhancedProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(enhancedProducts);
   const [activeCategory, setActiveCategory] = useState<string | null>('7697');
@@ -28,6 +30,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
     if (products) {
       const updatedProducts = enhanceProductsWithData(products);
       setEnhancedProducts(updatedProducts);
+      setProducts(updatedProducts)
       setFilteredProducts(updatedProducts);
     }
   }, [products]);

@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import Image from "next/image";
 import ImageMain from '@/../public/images/image-header.webp';
@@ -13,7 +12,6 @@ import SectionFaq from "@/flat-pages/Homepage/components/SectionFaq";
 import SectionCombine from "@/flat-pages/Homepage/components/SectionCombine";
 import SectionQuote from "@/flat-pages/Homepage/components/SectionQuote";
 import SectionWithMap from "@/flat-pages/Homepage/components/SectionWithMap";
-import {redirectToCourse} from "@/shared/api/auth";
 import SectionAbout from "@/flat-pages/Homepage/components/SectionAbout";
 
 interface ComponentProps {
@@ -39,7 +37,7 @@ const Homepage = ({products,events}:ComponentProps) => {
               <br/> every single day!
             </p>
             <div className="flex items-center gap-[1.04vw] sm:gap-[3.08vw] sm:flex-col">
-              <button onClick={redirectToCourse} className="bg-purple !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full">
+              <button className="bg-purple !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full">
                 ALL COURSES
               </button>
               <button className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.2vw] sm:w-full">

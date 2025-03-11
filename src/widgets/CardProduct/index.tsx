@@ -17,7 +17,7 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
   const href = getHref(product?.internalName ?? '')
   const imageUrl = product.image?.cloudKey ? process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}` : ImageNoImg.src
   return (
-    <div className="animate-fadeIn relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:max-w-full sm:rounded-[10.26vw]">
+    <div className="animate-fadeIn shrink-0 w-full relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:max-w-full sm:rounded-[10.26vw]">
       {product.isPremium && <div className="flex items-center justify-center absolute left-[1.04vw] top-[1.04vw] bg-orange size-[3.13vw] rounded-full z-[2] sm:top-[5.13vw] sm:left-[5.13vw] sm:size-[10.26vw]">
         <Image src={IconDiamond.src} width={IconDiamond.width} height={IconDiamond.height} alt="diamond icon" className="w-[1.82vw] h-[1.41vw] sm:w-[6.97vw] sm:h-[4.92vw]" />
       </div>}
