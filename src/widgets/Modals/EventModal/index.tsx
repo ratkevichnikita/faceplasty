@@ -51,6 +51,8 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
     }
   };
 
+  const durationTonano = duration + '00';
+
   return (
     <Dialog open={!!isActive} as="div" className="relative z-10 focus:outline-none" onClose={() => onClose()}>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto font-lato">
@@ -78,7 +80,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
                   </span>
                   <div>
                     <p className="text-[0.53vw]">Duration</p>
-                    <p className="text-[0.83vw]">{nanosecondsToTime(duration + '00')} Hour</p>
+                    <p className="text-[0.83vw]">{nanosecondsToTime(+durationTonano)} Hour</p>
                   </div>
                 </div>
                 <div className="space-y-[0.52vw]">
