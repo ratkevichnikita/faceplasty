@@ -63,6 +63,17 @@ const SectionBeforeAfter = () => {
         spaceBetween={20}
         slidesPerView="auto"
         modules={[Navigation]}
+        breakpoints={{
+          800: {
+            spaceBetween: 15
+          },
+          540: {
+            spaceBetween: 10
+          },
+          320: {
+            spaceBetween: 10
+          }
+        }}
         navigation={{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -70,7 +81,7 @@ const SectionBeforeAfter = () => {
         className="animate-fadeIn font-lato !py-[20px] !my-[-20px]"
       >
         {reviewsData.map(r => (
-          <SwiperSlide key={r.id} className="relative !w-[28.49vw] !h-[20.10vw] rounded-[2.08vw] overflow-hidden shadow-cardShadow">
+          <SwiperSlide key={r.id} className="relative !w-[28.49vw] !h-[20.10vw] rounded-[2.08vw] overflow-hidden shadow-cardShadow sm:rounded-[10.26vw] sm:!w-[74.74vw] sm:!h-[64.10vw]">
             <Image
               src={r.image}
               fill
@@ -84,7 +95,7 @@ const SectionBeforeAfter = () => {
           role="button"
           aria-label="Prev Slide"
           className={clsx(
-            'swiper-button-prev !size-[2.50vw] !left-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 ',
+            'swiper-button-prev !size-[2.50vw] !left-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 sm:!hidden',
             {}
           )}
         >
@@ -100,7 +111,7 @@ const SectionBeforeAfter = () => {
           role="button"
           aria-label="Next Slide"
           className={clsx(
-            'swiper-button-next !size-[2.50vw] rotate-[180deg] !right-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 ',
+            'swiper-button-next !size-[2.50vw] rotate-[180deg] !right-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 sm:!hidden',
             {}
           )}
         >

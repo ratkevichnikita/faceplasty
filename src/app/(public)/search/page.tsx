@@ -6,12 +6,15 @@ interface ComponentProps {
 }
 
 const Page:FC<ComponentProps> = async ({params,searchParams}) => {
-  const { query } = await searchParams
-  console.log('search',query)
+  const { query } = await searchParams;
+
   return (
    <>
      <div className="container">
        search: {query}
+       <div className="">
+
+       </div>
      </div>
    </>
   );

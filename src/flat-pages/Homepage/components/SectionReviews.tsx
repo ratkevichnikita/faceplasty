@@ -61,6 +61,20 @@ const SectionReviews = () => {
         spaceBetween={20}
         slidesPerView={3}
         modules={[Navigation]}
+        breakpoints={{
+          800: {
+            slidesPerView: 3,
+            spaceBetween: 15
+          },
+          540: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          320: {
+            slidesPerView: 1.2,
+            spaceBetween: 10
+          }
+        }}
         navigation={{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -68,21 +82,21 @@ const SectionReviews = () => {
         className="animate-fadeIn font-lato !py-[20px] !my-[-20px]"
       >
         {reviewsData.map(r => (
-          <SwiperSlide key={r.id} className="rounded-[2.08vw] p-[2.08vw] overflow-hidden border border-[#00000014] shadow-cardShadow">
+          <SwiperSlide key={r.id} className="rounded-[2.08vw] p-[2.08vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:p-[5.13vw] sm:rounded-[10.26vw]">
             <StarRating rating={r.rating} />
-            <div className="space-y-[1.04vw] pt-[1.04vw]">
-              <p className="text-[0.83vw] leading-[1.2em] min-h-[7.98vw]">{r.text}</p>
-              <div className="flex items-center gap-[0.63vw]">
+            <div className="space-y-[1.04vw] pt-[1.04vw] sm:space-y-[5.13vw] sm:pt-[5.13vw]">
+              <p className="text-[0.83vw] leading-[1.2em] min-h-[7.98vw] sm:text-[3.59vw] sm:min-h-[56.44vw]">{r.text}</p>
+              <div className="flex items-center gap-[0.63vw] sm:gap-[3.08vw]">
                 <Image
                   src={ImageReview.src}
                   width={ImageReview.width}
                   height={ImageReview.height}
                   alt="image"
-                  className="size-[2.50vw]"
+                  className="size-[2.50vw] sm:size-[12.31vw] "
                 />
                 <div>
-                  <p className="text-[0.83vw] leading-[1.2em] font-bold mb-[0.31vw]">{r.userName}</p>
-                  <p className="text-[0.83vw] leading-[1.2em]">{r.userCity}</p>
+                  <p className="text-[0.83vw] leading-[1.2em] font-bold mb-[0.31vw] sm:mb-[1.54vw] sm:text-[4.10vw]">{r.userName}</p>
+                  <p className="text-[0.83vw] leading-[1.2em] sm:text-[4.10vw]">{r.userCity}</p>
                 </div>
               </div>
             </div>

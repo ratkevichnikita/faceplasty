@@ -19,21 +19,39 @@ export const getCoursesList = async (): Promise<Product[] | null> => {
   }
 };
 
-export const loginUser = async (email:string, password: string) => {
+export const getWidgetById = async (id:string) => {
   try {
-    const resp = await apiClient.post('/api/login',{
-      email,
-      password
-    })
+    const response = await apiClient.get(`/widget/${id}`)
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getWebinars = async () => {
+  try {
+    const response = await apiClient.get('/webinars')
+    if(response.data) {
+      return response.data.body.items
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const registerToWebinar = async (email:string, name:string, webinarId: string) => {
+  const data = {
+    webinarId,
+    email,
+    firstName: name,
+    role: "guest",
+    sendEmail: true
+  }
+  try {
+    const resp = await apiClient.post('/addUserToWebinar', data);
     console.log('resp',resp)
-    if(resp.data.body) {
-      localStorage.setItem('token',resp.data.body.accessToken)
-      return resp.data.body
-    }
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      throw new Error('Ошибка при входе: ' + error.message);
-    }
-    throw new Error('Ошибка при входе: неизвестная ошибка');
+    return resp.data
+  } catch (error) {
+    console.log(error)
   }
 }

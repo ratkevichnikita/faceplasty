@@ -1,11 +1,12 @@
 import Homepage from "@/flat-pages/Homepage";
-import {getCoursesList} from "@/shared/api";
+import {getCoursesList, getWebinars} from "@/shared/api";
 
 const Page = async () => {
   const products = await getCoursesList();
+  const events = await getWebinars()
 
   return (
-    <Homepage products={products} />
+    <Homepage products={products} events={events} />
   );
 }
 

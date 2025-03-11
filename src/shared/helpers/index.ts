@@ -1,10 +1,13 @@
 import {CategoryName, Product} from "@/shared/api/types/courses";
 
-export function getRandomInt(min, max) {
-  return (Math.random() * (max - min) + min).toFixed(1);
+export function nanosecondsToTime(nanoseconds) {
+  const totalSeconds = Math.floor(nanoseconds / 1000000000);
+  const hours = Math.floor(totalSeconds / 3600);
+  return hours;
 }
 
 const getRandomRating = () => +(Math.random() * (4.9 - 4.6) + 4.6).toFixed(1);
+
 const getRandomStudents = () => Math.floor(Math.random() * (700 - 95 + 1)) + 95;
 
 export const enhanceProductsWithData = (products: Product[] | null): Product[] => {
@@ -47,7 +50,6 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
       };
     });
 };
-
 
 export function getHref(value: string): string | null {
   const match = value.match(/https?:\/\/[^\s]+/);

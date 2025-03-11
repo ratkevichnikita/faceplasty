@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import ImageLogo from "@/../public/icons/icon-logo.svg";
 import IconBack from '@/../public/icons/icon-arrow-back.svg';
-import {loginUser} from "@/shared/api";
 import Spinner from "@/widgets/Spinner";
+import {loginUser} from "@/shared/api/auth";
 
 type FormValues = {
   email: string;

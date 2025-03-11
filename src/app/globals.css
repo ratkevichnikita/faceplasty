@@ -60,3 +60,14 @@ iframe#QkoGrAWzK0GvAUOyO_4r_g {
   z-index: 100;
   box-shadow: 0px 4px 20px 0px #80808026;
 }
+
+@media screen and (max-width: 540px){
+  .container {
+    max-width: 90.51vw;
+  }
+  .button {
+    height: 14.62vw;
+    font-size: 3.59vw;
+    border-radius: 10.26vw;
+  }
+}

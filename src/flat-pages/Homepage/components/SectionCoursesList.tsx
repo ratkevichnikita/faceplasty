@@ -11,7 +11,6 @@ import clsx from "clsx";
 import {BESTSELLER_COURSE_ID, Product} from "@/shared/api/types/courses";
 import { enhanceProductsWithData } from "@/shared/helpers";
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
-import {bold} from "next/dist/lib/picocolors";
 
 interface ComponentProps {
   products: Product[] | null;
@@ -21,7 +20,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
 
   const [enhancedProducts, setEnhancedProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(enhancedProducts);
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>('7697');
   const [bestSellerActive,setBestsellerActive] = useState<boolean>(false)
   const [swiperReady, setSwiperReady] = useState(false);
 
@@ -51,7 +50,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
       setActiveCategory(categoryId);
       setBestsellerActive(false)
       setFilteredProducts(
-        categoryId ? enhancedProducts.filter((product) => product.category?.id === categoryId) : enhancedProducts
+        (categoryId && categoryId !== '7697') ? enhancedProducts.filter((product) => product.category?.id === categoryId) : enhancedProducts
       );
     }
   };
@@ -75,28 +74,37 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
             )
           })}
           </div>
-        : <div className="flex gap-[1.04vw] mb-[2.08vw]">
-          <button
-            className={clsx(
-              "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300",
-              { "bg-green text-white bg-opacity-100": bestSellerActive }
-            )}
-            onClick={handleFilterBestseller}
-          >
-            <p className="text-[0.83vw] uppercase font-medium leading-[1.2em]">Bestsellers</p>
-          </button>
-          {uniqueCategories.map((p) => (
+        : <div className="flex gap-[1.04vw] mb-[2.08vw] sm:flex-wrap sm:gap-[3.08vw] sm:mb-[6.15vw]">
             <button
-              key={p.id}
               className={clsx(
-                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300",
-                { "bg-green text-white bg-opacity-100": activeCategory === p.id }
+                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                { "bg-green text-white !bg-opacity-100": bestSellerActive }
               )}
-              onClick={() => handleFilter(p.id)}
+              onClick={handleFilterBestseller}
             >
-              <p className="text-[0.83vw] uppercase font-medium leading-[1.2em]">{p.name}</p>
+              <span className="text-[0.83vw] uppercase font-medium leading-[1.2em] sm:text-[4.10vw]">Bestsellers</span>
             </button>
-          ))}
+            <button
+              onClick={() => handleFilter('7697')}
+              className={clsx(
+                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                { "bg-green text-white !bg-opacity-100": activeCategory === '7697' }
+              )}
+            >
+              <span className="text-[0.83vw] uppercase font-medium leading-[1.2em] sm:text-[4.10vw]">All</span>
+            </button>
+            {uniqueCategories.map((p) => (
+              <button
+                key={p.id}
+                className={clsx(
+                  "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                  { "bg-green text-white !bg-opacity-100": activeCategory === p.id }
+                )}
+                onClick={() => handleFilter(p.id)}
+              >
+                <span className="text-[0.83vw] uppercase font-medium leading-[1.2em] sm:text-[4.10vw]">{p.name}</span>
+              </button>
+            ))}
         </div>
       }
        <Swiper
@@ -107,6 +115,16 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+          }}
+          breakpoints={{
+            540: {
+              slidesPerView: 4,
+              spaceBetween: 10
+            },
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 10
+            }
           }}
           className="font-lato !py-[20px] !my-[-20px]"
         >
@@ -125,14 +143,14 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
           <div
             role="button"
             aria-label="Prev Slide"
-            className="swiper-button-prev !size-[2.50vw] !left-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300"
+            className="swiper-button-prev !size-[2.50vw] !left-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 sm:!hidden"
           >
             <Image src={ArrowNav.src} width={ArrowNav.width} height={ArrowNav.height} alt="prev image" />
           </div>
           <div
             role="button"
             aria-label="Next Slide"
-            className="swiper-button-next !size-[2.50vw] rotate-[180deg] !right-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300"
+            className="swiper-button-next !size-[2.50vw] rotate-[180deg] !right-0 bg-white rounded-full flex items-center justify-center after:hidden transition-all duration-300 sm:!hidden"
           >
             <Image src={ArrowNav.src} width={ArrowNav.width} height={ArrowNav.height} alt="next image" />
           </div>
