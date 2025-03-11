@@ -3,7 +3,7 @@ import React, {FC} from "react";
 import Image from "next/image";
 import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 // import {getWidgetById} from "@/shared/api";
-import {useAppStore} from "@/shared/store/AppStore";
+// import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   text?: string

@@ -10,9 +10,10 @@ const SpecialOfferButton = () => {
     setOpen(false)
   }
 
-  const handleClick = () => {
-    console.log('1')
-  }
+  // const handleClick = () => {
+  //   console.log('1')
+  // }
+  
   if(open) {
     return (
       <div className="animate-fadeIn fixed w-full w-[87.50vw] left-1/2 bottom-[20px] -translate-x-1/2 z-[20] ">
