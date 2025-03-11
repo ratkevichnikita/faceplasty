@@ -3,44 +3,6 @@ import React, {useEffect} from 'react';
 import {useAppStore} from "@/shared/store/AppStore";
 import { Dialog, DialogPanel } from '@headlessui/react'
 
-const parseJson = (json) => {
-  // Рекурсивно обрабатываем все вложенные элементы
-  return json.children?.map((child, index) => {
-    return (
-      <div key={child.id || index} style={child.style}>
-        {child.content && (
-          <div dangerouslySetInnerHTML={{ __html: child.content }} />
-        )}
-        {child.children && (
-          <div className="nested-children">
-            {parseJson(child)}
-          </div>
-        )}
-        {/* Обработка других типов элементов */}
-        {child.element_class === 'EZText' && (
-          <div className="ez-text">{child.content}</div>
-        )}
-        {child.element_class === 'EZCheckout' && (
-          <div className="ez-checkout">
-            {/* Логика для обработки checkout форм */}
-          </div>
-        )}
-        {/* Можно добавить дополнительные условия для других типов элементов */}
-      </div>
-    );
-  });
-};
-
-const WidgetComponent = ({ jsonString }) => {
-  const parsedJson = JSON.parse(jsonString);  // Преобразуем строку JSON в объект
-
-  return (
-    <div className="widget-container">
-      {parseJson(parsedJson)} {/* Рекурсивно выводим контент */}
-    </div>
-  );
-};
-
 const AuthModal = () => {
   const { isTrialModalActive, setTrialModal, trialModalContent } = useAppStore();
 

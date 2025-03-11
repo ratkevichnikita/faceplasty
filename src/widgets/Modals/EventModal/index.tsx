@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import {loginUser} from "@/shared/api/auth";
 import Spinner from "@/widgets/Spinner";
 import {registerToWebinar} from "@/shared/api";
-import {formatMillisecondsToHours, nanosecondsToTime} from "@/shared/helpers";
+import {nanosecondsToTime} from "@/shared/helpers";
 
 interface ComponentProps {
   isActive: string | null
@@ -15,6 +15,7 @@ interface ComponentProps {
   description: string | null
   date: string
   duration: number
+  webinarId: string
 }
 
 type FormValues = {
@@ -22,7 +23,7 @@ type FormValues = {
   name: string;
 };
 
-const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, description, date,duration}) => {
+const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, description, date,duration, webinarId}) => {
   const [loading,setLoading] = useState<boolean>(false);
   const [error,setError] = useState<string>('')
 
@@ -36,7 +37,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
     console.log('data',data)
     setLoading(true)
     try {
-      const response = await registerToWebinar(data.email,data.name);
+      const response = await registerToWebinar(data.email,data.name,webinarId);
       console.log('response',response)
       if(response) {
         // setAuthModal({ modalType: null, active: false })
@@ -65,7 +66,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
             <div className="w-full ">
               <div className="relative w-full h-[19.48vw]">
                 <Image
-                  src={image}
+                  src={image ?? ''}
                   fill
                   alt="webinar cover"
                   className="object-cover object-top"

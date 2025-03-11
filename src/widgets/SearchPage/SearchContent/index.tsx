@@ -13,8 +13,6 @@ interface ComponentProps {
 const SearchContent:FC<ComponentProps> = ({query}) => {
   const { products, setProducts } = useAppStore()
   const [loading,setLoading] = useState<boolean>(false)
-  console.log('products',products)
-  console.log('query',query)
 
   const getProducts = async () => {
     setLoading(true)

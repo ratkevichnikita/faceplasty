@@ -1,6 +1,6 @@
 import {CategoryName, Product} from "@/shared/api/types/courses";
 
-export function nanosecondsToTime(nanoseconds) {
+export function nanosecondsToTime(nanoseconds: number) {
   const totalSeconds = Math.floor(nanoseconds / 1000000000);
   const hours = Math.floor(totalSeconds / 3600);
   return hours;

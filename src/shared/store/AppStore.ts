@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { User } from "@/shared/api/types/User";
 import { Product } from "@/shared/api/types/courses";
 
 interface TrialModalContent {
@@ -23,7 +22,7 @@ interface AppStoreState {
   isTrialModalActive: boolean;
   trialModalContent: TrialModalContent | null;
   products: Product[] | null;
-  user: User | null;
+  user: null;
   modalType: "login" | "register" | null;
   setAuthModal: (value: { modalType: "login" | "register" | null; active: boolean }) => void;
   setTrialModal: (value: { isTrialModalActive: boolean; trialModalContent: TrialModalContent | null }) => void;

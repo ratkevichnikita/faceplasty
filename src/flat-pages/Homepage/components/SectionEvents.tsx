@@ -88,6 +88,7 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
                     description={item.description}
                     date={date}
                     duration={item.duration}
+                    webinarId={item.id}
                   />
                 )}
               </SwiperSlide>

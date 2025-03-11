@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DefaultLayout = ({children}) => {
+const DefaultLayout = ({children}:{ children: React.ReactNode }) => {
   return (
     <main>
       {children}

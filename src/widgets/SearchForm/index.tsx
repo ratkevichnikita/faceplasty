@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import IconSearch from '@/../public/icons/icon-search.svg';
 import clsx from "clsx";
-import {FC, useState} from "react";
+import {FC} from "react";
 
 type SearchFormValues = {
   search: string;
