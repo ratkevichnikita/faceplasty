@@ -2,11 +2,10 @@ import React, {FC} from 'react';
 import SearchContent from "@/widgets/SearchPage/SearchContent";
 
 interface ComponentProps {
-  params: Promise<{ slug: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  searchParams: Promise<{ [key: string]: string }>
 }
 
-const Page:FC<ComponentProps> = async ({params,searchParams}) => {
+const Page:FC<ComponentProps> = async ({searchParams}) => {
   const { query } = await searchParams;
 
   return (

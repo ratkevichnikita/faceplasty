@@ -21,7 +21,7 @@ const SectionAbout = () => {
         </p>
         <p className="hidden text-[3.59vw] sm:block">
           Discover how easy it can be to make self-care a natural part of your daily routine.
-          From expert support to exclusive resources, we’re here to guide and inspire you along the way.
+          From expert support to exclusive resources, we&apos;re here to guide and inspire you along the way.
         </p>
       </div>
       <div className="flex gap-[2.76vw]">
@@ -53,7 +53,7 @@ const SectionAbout = () => {
               />
               <div className="sm:text-left">
                 <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] sm:mb-[1.54vw] sm:text-[4.10vw] sm:[&>br]:hidden">Full access for all <br/> courses </p>
-                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw] sm:max-w-full sm:text-[2.56vw]"> In 7 days, you'll gain access to all our knowledge and experience</p>
+                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw] sm:max-w-full sm:text-[2.56vw]"> In 7 days, you&apos;ll gain access to all our knowledge and experience</p>
               </div>
               </li>
             <li className="bg-[#E5E5E5] h-[9.18vw] w-full rounded-[2.08vw] bg-opacity-50 flex flex-col items-center justify-center sm:order-3 sm:px-[3.85vw] sm:gap-[3.85vw] sm:justify-start sm:flex-row sm:h-[15.64vw] sm:rounded-[5.13vw]">

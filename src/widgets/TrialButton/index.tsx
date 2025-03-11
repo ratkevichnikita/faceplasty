@@ -2,7 +2,7 @@
 import React, {FC} from "react";
 import Image from "next/image";
 import IconArrow from "@/../public/icons/icon-arrow-small.svg";
-import {getWidgetById} from "@/shared/api";
+// import {getWidgetById} from "@/shared/api";
 import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
@@ -10,7 +10,7 @@ interface ComponentProps {
 }
 
 const TrialButton:FC<ComponentProps> = ({text= "Become a member"}) => {
-  const {setTrialModal} = useAppStore()
+  // const {setTrialModal} = useAppStore()
   const handleClick = () => {
     document.body.classList.toggle("isPaymentOpen");
     // Проверяем, не был ли скрипт уже загружен

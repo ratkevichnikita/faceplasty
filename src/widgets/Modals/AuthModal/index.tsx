@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import {useAppStore} from "@/shared/store/AppStore";
-import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { Dialog, DialogPanel } from '@headlessui/react'
 import Login from "@/widgets/Modals/AuthModal/Login";
 import Register from "@/widgets/Modals/AuthModal/Register";
 

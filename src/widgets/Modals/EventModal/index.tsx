@@ -2,7 +2,6 @@ import React, {FC, useState} from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react'
 import Image from "next/image";
 import {useForm} from "react-hook-form";
-import {loginUser} from "@/shared/api/auth";
 import Spinner from "@/widgets/Spinner";
 import {registerToWebinar} from "@/shared/api";
 import {nanosecondsToTime} from "@/shared/helpers";

@@ -1,7 +1,6 @@
 'use client'
 import React, {useState} from 'react';
 import Image from "next/image";
-import BgLogin from '@/../public/images/bg-login.svg';
 import {useAppStore} from "@/shared/store/AppStore";
 import { useForm } from "react-hook-form";
 import Link from "next/link";

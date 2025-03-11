@@ -19,7 +19,7 @@ const SectionQuote = () => {
         <div className="pt-[2.34vw] pb-[1.04vw] px-[2.60vw]">
           <p className="leading-[1.2em] pl-[4.69vw] text-[0.83vw] opacity-80 italic font-medium mb-[0.78vw]">
             “In my 18 years of medical practice, I discovered one powerful truth — real and lasting beauty comes when you care for your body,
-            mind, and health as a whole. I'm proud to help millions of people apply science-backed self-care methods to look younger, feel more energized, and experience true happiness.”
+            mind, and health as a whole. I&apos;m proud to help millions of people apply science-backed self-care methods to look younger, feel more energized, and experience true happiness.”
           </p>
           <div className="text-[0.83vw] text-right opacity-80">
             <p className="font-semibold">Dr. Ales Ulishchenko</p>
@@ -59,7 +59,7 @@ const SectionQuote = () => {
         </div>
         <div className="bg-[#E5E5E5] italic px-[5.13vw] font-medium py-[3.85vw] text-[3.59vw] rounded-[10.26vw]">
           <p className="mb-[3.85vw] ">
-            “In my 18 years of medical practice, I discovered one powerful truth — real and lasting beauty comes when you care for your body, mind, and health as a whole. I'm proud to help millions of people apply science-backed self-care methods to look younger, feel more energized, and experience true happiness.”
+            “In my 18 years of medical practice, I discovered one powerful truth — real and lasting beauty comes when you care for your body, mind, and health as a whole. I&apos;m proud to help millions of people apply science-backed self-care methods to look younger, feel more energized, and experience true happiness.”
           </p>
           <p className="text-right">
             Dr. Ales Ulishchenko
