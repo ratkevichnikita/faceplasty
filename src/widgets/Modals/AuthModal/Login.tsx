@@ -94,7 +94,7 @@ const Login = () => {
             className="flex flex-col items-center space-y-[0.63vw] w-full "
           >
             {/* Email */}
-            <div className="w-full">
+            <div className="w-full relative">
               <label className="font-semibold text-[0.78vw] block mb-[0.31vw]">Your email</label>
               <input
                 {...register("email", {
@@ -109,12 +109,12 @@ const Login = () => {
                 placeholder="Enter your email"
               />
               {errors.email && (
-                <p className="text-red-500 mt-1 text-[0.78vw]">{errors.email.message}</p>
+                <p className="text-red-500 mt-1 text-[0.78vw] absolute right-[0.5vw] top-[-0.5vw]">{errors.email.message}</p>
               )}
             </div>
 
             {/* Password */}
-            <div className="w-full">
+            <div className="w-full relative">
               <label className="font-semibold text-[0.78vw] block mb-[0.31vw]">Your password</label>
               <input
                 {...register("password", {
@@ -129,7 +129,7 @@ const Login = () => {
                 placeholder="Enter your password"
               />
               {errors.password && (
-                <p className="text-red-500 mt-1 text-[0.78vw]">{errors.password.message}</p>
+                <p className="text-red-500 mt-1 text-[0.78vw] absolute right-[0.5vw] top-[-0.5vw]">{errors.password.message}</p>
               )}
             </div>
             {error && <p className="text-red-500 mt-1 text-[0.78vw]">{error}</p>}

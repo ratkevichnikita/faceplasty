@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from "next/image";
 import IconLogo from "@/../public/icons/icon-logo-white.svg";
@@ -7,8 +8,10 @@ import IconBanks from '@/../public/icons/icon-banks.png';
 import IconEmail from '@/../public/icons/icon-email-white.svg';
 import IconWp from '@/../public/icons/icon-wp.svg';
 import Link from "next/link";
+import {useAppStore} from "@/shared/store/AppStore";
 
 const Footer = () => {
+  const {setAuthModal} = useAppStore()
   return (
    <div className="bg-black text-white pt-[2.34vw] pb-[4.01vw] sm:py-[7.69vw]">
      <div className="container">
@@ -56,7 +59,10 @@ const Footer = () => {
                   />
                   <span className="font-semibold text-[0.83vw] uppercase sm:text-[3.59vw]">Whats app</span>
                 </Link>
-                <button className="h-[3.13vw] bg-orange text-white text-[0.83vw] px-[2.08vw] font-semibold rounded-[2.04vw] uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]">
+                <button
+                  onClick={() => setAuthModal({ modalType: "login", active: true })}
+                  className="h-[3.13vw] bg-orange text-white text-[0.83vw] px-[2.08vw] font-semibold rounded-[2.04vw] uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                >
                   log in
                 </button>
               </div>
