@@ -3,41 +3,18 @@ import React, {FC} from "react";
 import Image from "next/image";
 import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 // import {getWidgetById} from "@/shared/api";
-// import {useAppStore} from "@/shared/store/AppStore";
+import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   text?: string
 }
 
 const TrialButton:FC<ComponentProps> = ({text= "Become a member"}) => {
-  // const {setTrialModal} = useAppStore()
+  const {setTrialModal} = useAppStore()
+
   const handleClick = () => {
-    document.body.classList.toggle("isPaymentOpen");
-    // Проверяем, не был ли скрипт уже загружен
-    if (document.getElementById("widget-script")) return;
-
-    const script = document.createElement("script");
-    script.src = "https://static.axl.tech/widget/widget.min.js";
-    script.async = true;
-    script.id = "widget-script"; // ID, чтобы избежать повторной загрузки
-
-    // Добавляем атрибуты, если они нужны для работы виджета
-    script.setAttribute("ao-number", "9380");
-    script.setAttribute("ao-widget-id", "QkoGrAWzK0GvAUOyO_4r_g");
-    script.setAttribute("ao-domain", "fp-platform.online");
-
-    document.body.appendChild(script);
+    setTrialModal({isTrialModalActive:true})
   };
-
-  // const handleClick = async () => {
-  //   try {
-  //     const resp = await getWidgetById('QkoGrAWzK0GvAUOyO_4r_g')
-  //     setTrialModal({isTrialModalActive:true, trialModalContent:resp.body})
-  //     console.log('resp',resp)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
 
   return (
     <>
@@ -60,7 +37,6 @@ const TrialButton:FC<ComponentProps> = ({text= "Become a member"}) => {
         <span className="font-bold text-purple">Free one-week trial</span>, then $47/month <br/>
         You can cancel your subscription at any time.
       </p>
-
     </>
   );
 };

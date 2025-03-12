@@ -54,11 +54,12 @@ body.isPaymentOpen:before {
 }
 
 iframe#QkoGrAWzK0GvAUOyO_4r_g {
-  position: fixed;
+  position: absolute;
   left: 0;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0px 4px 20px 0px #80808026;
+  top: -2vw;
+  /*z-index: 100;*/
+  /*box-shadow: 0px 4px 20px 0px #80808026;*/
+  /*background-color: rgba(0, 0, 0, 0.2);*/
 }
 
 @media screen and (max-width: 540px){
@@ -69,5 +70,9 @@ iframe#QkoGrAWzK0GvAUOyO_4r_g {
     height: 14.62vw;
     font-size: 3.59vw;
     border-radius: 10.26vw;
+  }
+
+  iframe#QkoGrAWzK0GvAUOyO_4r_g {
+    top: -8vw;
   }
 }
