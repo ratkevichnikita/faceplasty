@@ -30,6 +30,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>();
 
@@ -42,6 +43,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
           title: 'Success!',
           description: 'You have successfully registered for the webinar.',
         });
+        reset()
         return onClose()
       }
       return setError('Incorrect email or password')
@@ -117,20 +119,16 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
                     )}
                   </div>
 
-                  {/* Password */}
+                  {/* Name */}
                   <div className="w-full relative">
                     <label className="font-semibold text-[0.78vw] block mb-[0.31vw] sm:text-[3.59vw] sm:mb-[1.54vw]">Your name</label>
                     <input
                       {...register("name", {
-                        required: "Name is required",
-                        minLength: {
-                          value: 3,
-                          message: "Password must be at least 6 characters",
-                        },
+                        required: "Name is required"
                       })}
-                      type="password"
+                      type="text"
                       className="w-full p-[0.83vw] text-[0.83vw] placeholder:text-[0.83vw] bg-[#E5E5E5] bg-opacity-50 rounded-[0.52vw] focus:outline-none sm:px-[5.13vw] sm:text-[4.10vw] sm:placeholder:text-[4.10vw] sm:rounded-[2.56vw] sm:h-[13.33vw]"
-                      placeholder="Enter your password"
+                      placeholder="Enter your name"
                     />
                     {errors.name && (
                       <p className="text-error mt-1 text-[0.78vw] absolute right-[0.5vw] top-[-0.5vw] sm:text-[2.56vw]">{errors.name.message}</p>
