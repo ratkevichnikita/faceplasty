@@ -11,7 +11,7 @@ const navigation = [
   {title:'About', href:'#about',id:1},
   {title:'Courses', href:'#courses',id:2},
   {title:'FAQ', href:'#faq',id:3},
-  {title:'Contacts', href:'contacts',id:4},
+  {title:'Contacts', href:'#contacts',id:4},
 ]
 
 const Header = () => {
@@ -48,18 +48,19 @@ const Header = () => {
           <div className="flex gap-[2.08vw] sm:items-center sm:gap-[7.69vw] sm:ml-auto">
             <SearchForm isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
             <div className="flex gap-[0.52vw] sm:hidden">
-              <button
-                onClick={() => setAuthModal({ modalType: "register", active: true })}
-                className="text-[0.83vw] h-[3.13vw] shrink-0 text-black font-semibold uppercase bg-transparent rounded-[2.08vw] px-[1.30vw]"
-              >
-                Sign up
-              </button>
-              <button
-                onClick={() => setAuthModal({ modalType: "login", active: true })}
-                className="button !h-[3.13vw] shrink-0 bg-purple text-white hover:bg-black hover:text-white"
+              {/*<button*/}
+              {/*  onClick={() => setAuthModal({ modalType: "register", active: true })}*/}
+              {/*  className="text-[0.83vw] h-[3.13vw] shrink-0 text-black font-semibold uppercase bg-transparent rounded-[2.08vw] px-[1.30vw]"*/}
+              {/*>*/}
+              {/*  Sign up*/}
+              {/*</button>*/}
+              <Link
+                href="https://course.fp-platform.online/login?returnUrl=/"
+                rel="nofollow"
+                className="button flex items-center !h-[3.13vw] shrink-0 bg-purple text-white hover:bg-black hover:text-white"
               >
                 Log in
-              </button>
+              </Link>
             </div>
             <button
               onClick={() => setMenuModal(!menuModal)}

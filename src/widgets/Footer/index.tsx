@@ -47,7 +47,8 @@ const Footer = () => {
                   <span className="font-semibold text-[0.83vw] uppercase sm:text-[3.59vw]">support@fp-platform.online</span>
                 </Link>
                 <Link
-                  href="mailto:support@fp-platform.online"
+                  href="https://api.whatsapp.com/send?phone=971508610413"
+                  rel="nofollow"
                   className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] text-white rounded-[2.04vw] w-[14.58vw] sm:gap-[2.05vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   <Image
@@ -59,12 +60,13 @@ const Footer = () => {
                   />
                   <span className="font-semibold text-[0.83vw] uppercase sm:text-[3.59vw]">Whats app</span>
                 </Link>
-                <button
-                  onClick={() => setAuthModal({ modalType: "login", active: true })}
-                  className="h-[3.13vw] bg-orange text-white text-[0.83vw] px-[2.08vw] font-semibold rounded-[2.04vw] uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                <Link
+                  href="https://course.fp-platform.online/login?returnUrl=/"
+                  rel="nofollow"
+                  className="h-[3.13vw] bg-orange flex items-center text-white text-[0.83vw] px-[2.08vw] font-semibold rounded-[2.04vw] uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   log in
-                </button>
+                </Link>
               </div>
               <p className="text-[0.94vw] sm:text-[3.08vw]">
                 All services and information on this website are for educational purposes only and do not constitute medical advice or treatment

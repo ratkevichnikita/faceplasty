@@ -32,4 +32,5 @@ export interface Event {
   siteDomainId: string;
   contents: Content[];
   designSettingsJson: string
+  templateDurationMs: number
 }

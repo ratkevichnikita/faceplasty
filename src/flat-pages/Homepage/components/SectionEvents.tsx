@@ -53,6 +53,7 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
             const scheduledDate = dayjs(item.scheduledDate);
             return scheduledDate.isAfter(currentDate);
           })
+          .filter(item => !item.templateDurationMs)
           .sort((a, b) => dayjs(a.scheduledDate).diff(dayjs(b.scheduledDate)))
           .map((item) => {
           const design = JSON.parse(item.designSettingsJson);
@@ -77,8 +78,8 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
                     </span>
                   </div>
                   <div className="space-y-[0.52vw] sm:space-y-[2.56vw]">
-                    <p className="font-semibold text-[0.83vw] sm:text-[4.10vw] sm:line-clamp-2">{item.name}</p>
-                    <p className="text-[0.73vw] leading-[1.2em] sm:text-[3.59vw]" dangerouslySetInnerHTML={{__html:item.description ?? ''}}/>
+                    <p className="font-semibold text-[0.83vw] sm:text-[4.10vw] min-h-[24px] sm:line-clamp-2">{item.name}</p>
+                    <p className="text-[0.73vw] leading-[1.2em] sm:text-[3.59vw] line-clamp-2" dangerouslySetInnerHTML={{__html:item.description ?? ''}}/>
                   </div>
                   <button
                     onClick={() => setModalActive(item.id)}

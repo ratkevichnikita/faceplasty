@@ -74,12 +74,14 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
                 <span className="block w-[0.83vw] h-[1px] bg-black transform -rotate-45 absolute sm:w-[3.83vw]" />
               </button>
               <div className="relative w-full h-[15.48vw] rounded-t-[2.08vw] overflow-hidden sm:rounded-t-[10.26vw] sm:h-[38.46vw]">
-                <Image
-                  src={image ?? ''}
-                  fill
-                  alt="webinar cover"
-                  className="object-cover object-top rounded-t-[2.08vw] overflow-hidden sm:rounded-t-[10.26vw]"
-                />
+                {image && (
+                  <Image
+                    src={image ?? ''}
+                    fill
+                    alt="webinar cover"
+                    className="object-cover object-top rounded-t-[2.08vw] overflow-hidden sm:rounded-t-[10.26vw]"
+                  />
+                )}
               </div>
               <div className="p-[1.08vw] sm:p-[3.08vw]">
                 <div className="flex justify-between items-center mb-[1.04vw] sm:mb-[5.13vw]">

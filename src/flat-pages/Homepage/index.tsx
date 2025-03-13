@@ -13,6 +13,8 @@ import SectionCombine from "@/flat-pages/Homepage/components/SectionCombine";
 import SectionQuote from "@/flat-pages/Homepage/components/SectionQuote";
 import SectionWithMap from "@/flat-pages/Homepage/components/SectionWithMap";
 import SectionAbout from "@/flat-pages/Homepage/components/SectionAbout";
+import SpecialOfferButton from "@/widgets/SpecialOfferButton";
+import Link from "next/link";
 
 interface ComponentProps {
   products: Product[] | null
@@ -37,9 +39,13 @@ const Homepage = ({products,events}:ComponentProps) => {
               <br/> every single day!
             </p>
             <div className="flex items-center gap-[1.04vw] sm:gap-[3.08vw] sm:flex-col">
-              <button className="bg-purple !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full">
+              <Link
+                href="https://course.fp-platform.online/login?returnUrl=/"
+                rel="nofollow"
+                className="bg-purple flex items-center !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full"
+              >
                 ALL COURSES
-              </button>
+              </Link>
               <button className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.2vw] sm:w-full">
                 <span className="shrink-0">become a member</span>
                 <span className="rounded-full shrink-0 flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
@@ -143,6 +149,7 @@ const Homepage = ({products,events}:ComponentProps) => {
           <SectionFaq />
         </div>
       </div>
+      <SpecialOfferButton />
     </div>
   );
 };
