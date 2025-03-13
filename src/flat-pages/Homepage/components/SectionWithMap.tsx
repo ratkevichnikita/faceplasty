@@ -4,9 +4,11 @@ import ImageMap from '@/../public/images/image-map.webp';
 import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 import IconWorld from '@/../public/icons/icon-world.svg';
 import IconStudent from '@/../public/icons/icon-student2.svg';
+import {useAppStore} from "@/shared/store/AppStore";
 
 
 const SectionWithMap = () => {
+  const {setTrialModal} = useAppStore()
   return (
     <div className="relative pt-[15.10vw] pb-[3.13vw] overflow-hidden sm:flex sm:flex-col">
       <div className="max-w-[40vw] sm:max-w-full">
@@ -19,7 +21,10 @@ const SectionWithMap = () => {
           <p> One mission</p>
         </div>
         <div className="flex items-center gap-[1.04vw] sm:gap-[3.08vw] sm:hidden">
-          <button className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange">
+          <button
+            onClick={() => setTrialModal({isTrialModalActive:true})}
+            className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange"
+          >
             <span className="shrink-0">become a member</span>
             <span className="shrink-0 rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg]">
                 <Image
@@ -67,7 +72,10 @@ const SectionWithMap = () => {
         </p>
       </div>
       <div className="hidden items-center gap-[1.04vw] sm:flex-col sm:gap-[3.08vw] sm:pb-[10.26vw] sm:flex">
-        <button className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:justify-center sm:gap-[2.2vw] sm:w-full">
+        <button
+          onClick={() => setTrialModal({isTrialModalActive:true})}
+          className="bg-orange text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:justify-center sm:gap-[2.2vw] sm:w-full"
+        >
           <span className="shrink-0 sm:text-[3.59vw]">become a member</span>
           <span className="shrink-0 rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
             <Image

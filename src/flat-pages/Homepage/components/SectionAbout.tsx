@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from "next/image";
 import VideoPlayer from "@/widgets/VideoPlayer";
@@ -5,8 +6,10 @@ import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 import Icon1 from '@/../public/icons/icon-about1.svg';
 import Icon2 from '@/../public/icons/icon-about2.svg';
 import Icon3 from '@/../public/icons/icon-about3.svg';
+import {useAppStore} from "@/shared/store/AppStore";
 
 const SectionAbout = () => {
+  const {setTrialModal} = useAppStore()
   return (
     <>
       <div className="hidden relative w-full h-[51.28vw] mb-[6.15vw] sm:block">
@@ -73,7 +76,10 @@ const SectionAbout = () => {
         </div>
       </div>
       <div className="flex items-center gap-[1.04vw] pt-[1.48vw] sm:flex-col sm:gap-[3.08vw] sm:pt-[6.15vw] sm:pb-[11.79vw]">
-        <button className="bg-orange !px-[4.69vw] text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[3.08vw] sm:justify-center sm:text-[3.59vw] sm:gap-[2.2vw] sm:w-full">
+        <button
+          onClick={() => setTrialModal({isTrialModalActive:true})}
+          className="bg-orange !px-[4.69vw] text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[3.08vw] sm:justify-center sm:text-[3.59vw] sm:gap-[2.2vw] sm:w-full"
+        >
           join the club
           <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
             <Image

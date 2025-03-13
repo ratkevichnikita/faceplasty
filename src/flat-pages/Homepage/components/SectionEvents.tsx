@@ -60,7 +60,7 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
           const date = dayjs(item.scheduledDate).format("D MMM HH:mm")
           const durationToNano = item.duration + '00';
           return (
-            <SwiperSlide key={item.id} className="rounded-[2.08vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:rounded-[10.26vw]">
+            <SwiperSlide key={item.id} className="rounded-[2.08vw] max-w-[300px] mr-[10px] overflow-hidden border border-[#00000014] shadow-cardShadow sm:rounded-[10.26vw]">
                 <Image
                   src={design.registration.coverUrl}
                   width={ImageEvents.width}

@@ -33,7 +33,7 @@ const Footer = () => {
               <div className="flex gap-[1.04vw] mb-[1.04vw] sm:mb-[3.2vw] sm:flex-col sm:max-w-[75.64vw] sm:mx-auto sm:gap-[3.08vw]">
                 <Link
                   href="mailto:support@fp-platform.online"
-                  className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] text-white rounded-[2.04vw] px-[1.04vw] sm:gap-[2.05vw]  sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                  className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] border border-transparent transition-bg duration-300 hover:border-white hover:bg-black hover:border-white hover:text-white text-white rounded-[2.04vw] px-[1.04vw] sm:gap-[2.05vw]  sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   <Image
                     src={IconEmail.src}
@@ -47,7 +47,7 @@ const Footer = () => {
                 <Link
                   href="https://api.whatsapp.com/send?phone=971508610413"
                   rel="nofollow"
-                  className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] text-white rounded-[2.04vw] w-[14.58vw] sm:gap-[2.05vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                  className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] border border-transparent transition-bg duration-300 hover:bg-black hover:border-white hover:text-white text-white rounded-[2.04vw] w-[14.58vw] sm:gap-[2.05vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   <Image
                     src={IconWp.src}
@@ -61,7 +61,7 @@ const Footer = () => {
                 <Link
                   href="https://course.fp-platform.online/login?returnUrl=/"
                   rel="nofollow"
-                  className="h-[3.13vw] bg-orange flex items-center text-white text-[0.83vw] px-[2.08vw] font-semibold rounded-[2.04vw] uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                  className="h-[3.13vw] bg-orange flex items-center text-white text-[0.83vw] px-[2.08vw] font-semibold border border-transparent transition-bg duration-300 rounded-[2.04vw] hover:border-white transition-bg duration-300 hover:bg-black uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   log in
                 </Link>

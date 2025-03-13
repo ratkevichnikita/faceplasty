@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from "next/image";
 import ImageMain from '@/../public/images/image-header.webp';
@@ -15,6 +16,7 @@ import SectionWithMap from "@/flat-pages/Homepage/components/SectionWithMap";
 import SectionAbout from "@/flat-pages/Homepage/components/SectionAbout";
 import SpecialOfferButton from "@/widgets/SpecialOfferButton";
 import Link from "next/link";
+import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   products: Product[] | null
@@ -22,7 +24,7 @@ interface ComponentProps {
 }
 
 const Homepage = ({products,events}:ComponentProps) => {
-
+  const {setTrialModal} = useAppStore()
   return (
     <div className="container ">
       {/*MAIN SECTION */}
@@ -46,7 +48,10 @@ const Homepage = ({products,events}:ComponentProps) => {
               >
                 ALL COURSES
               </Link>
-              <button className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.2vw] sm:w-full">
+              <button
+                onClick={() => setTrialModal({isTrialModalActive:true})}
+                className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.2vw] sm:w-full"
+              >
                 <span className="shrink-0">become a member</span>
                 <span className="rounded-full shrink-0 flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
                   <Image
