@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ImageLogo from '@/../public/icons/icon-logo.svg'
 import SearchForm from "@/widgets/SearchForm";
-import {useAppStore} from "@/shared/store/AppStore";
 import clsx from "clsx";
 
 const navigation = [
@@ -17,7 +16,6 @@ const navigation = [
 const Header = () => {
   const [menuModal,setMenuModal] = useState<boolean>(false)
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const { setAuthModal } = useAppStore();
 
   return (
     <div className="py-[1.56vw] font-lato sm:pt-[5.13vw] sm:pb-0">

@@ -8,10 +8,8 @@ import IconBanks from '@/../public/icons/icon-banks.png';
 import IconEmail from '@/../public/icons/icon-email-white.svg';
 import IconWp from '@/../public/icons/icon-wp.svg';
 import Link from "next/link";
-import {useAppStore} from "@/shared/store/AppStore";
 
 const Footer = () => {
-  const {setAuthModal} = useAppStore()
   return (
    <div className="bg-black text-white pt-[2.34vw] pb-[4.01vw] sm:py-[7.69vw]">
      <div className="container">
