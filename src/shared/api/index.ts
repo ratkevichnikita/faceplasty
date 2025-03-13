@@ -2,7 +2,7 @@ import apiClient from "@/shared/api/client";
 import {ApiResponse, Product} from "@/shared/api/types/courses";
 import {AxiosResponse} from "axios";
 
-export const getCoursesList = async (take): Promise<Product[] | null> => {
+export const getCoursesList = async (take: string): Promise<Product[] | null> => {
   try {
     const resp: AxiosResponse<ApiResponse> = await apiClient.get(`/products?take=${take}`);
     if (resp.data) {
