@@ -2,9 +2,9 @@ import apiClient from "@/shared/api/client";
 import {ApiResponse, Product} from "@/shared/api/types/courses";
 import {AxiosResponse} from "axios";
 
-export const getCoursesList = async (): Promise<Product[] | null> => {
+export const getCoursesList = async (take): Promise<Product[] | null> => {
   try {
-    const resp: AxiosResponse<ApiResponse> = await apiClient.get('/products');
+    const resp: AxiosResponse<ApiResponse> = await apiClient.get(`/products?take=${take}`);
     if (resp.data) {
       return resp.data.body.items;
     }
@@ -18,15 +18,6 @@ export const getCoursesList = async (): Promise<Product[] | null> => {
     return null;
   }
 };
-
-export const getWidgetById = async (id:string) => {
-  try {
-    const response = await apiClient.get(`/widget/${id}`)
-    return response.data
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 export const getWebinars = async () => {
   try {
