@@ -44,7 +44,7 @@ const Homepage = ({products,events}:ComponentProps) => {
               <Link
                 href="https://course.fp-platform.online/login?returnUrl=/"
                 rel="nofollow"
-                className="bg-purple flex items-center !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full"
+                className="bg-purple flex justify-center flex items-center !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full"
               >
                 ALL COURSES
               </Link>

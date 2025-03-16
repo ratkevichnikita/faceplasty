@@ -15,6 +15,7 @@ interface AppStoreState {
   setTrialModal: (value: { isTrialModalActive: boolean }) => void;
   setWidgetModal: (value: { isWidgetModalActive: boolean; isWidgetModalId: string | null }) => void;
   setProducts: (value: Product[] | null) => void;
+  setMenuModal: (value: {isMenuModalActive: boolean}) => void;
 }
 
 export const useAppStore = create<AppStoreState>((set) => ({
@@ -27,6 +28,7 @@ export const useAppStore = create<AppStoreState>((set) => ({
   user: null,
   isWidgetModalActive: false,
   isWidgetModalId: null,
+  setMenuModal: ({isMenuModalActive}) => set({isMenuModalActive}),
   setWidgetModal: ({ isWidgetModalActive, isWidgetModalId }) => set({ isWidgetModalActive, isWidgetModalId }),
   setTrialModal: ({ isTrialModalActive }) => set({ isTrialModalActive }),
   setAuthModal: ({ modalType, active }) => set({ isAuthModalActive: active, modalType }),

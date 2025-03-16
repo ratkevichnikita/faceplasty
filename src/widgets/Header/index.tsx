@@ -5,6 +5,7 @@ import Link from "next/link";
 import ImageLogo from '@/../public/icons/icon-logo.svg'
 import SearchForm from "@/widgets/SearchForm";
 import clsx from "clsx";
+import {useAppStore} from "@/shared/store/AppStore";
 
 const navigation = [
   {title:'About', href:'#about',id:1},
@@ -14,14 +15,14 @@ const navigation = [
 ]
 
 const Header = () => {
-  const [menuModal,setMenuModal] = useState<boolean>(false)
+  const {setMenuModal,isMenuModalActive} = useAppStore()
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   return (
     <div className="py-[1.56vw] font-lato sm:pt-[5.13vw] sm:pb-0">
       <div className="container">
         <div className="flex items-center justify-between gap-[0.75vw]">
-          <Link href="/" className={clsx("animate-fadeIn",{"sm:hidden": isExpanded})}>
+          <Link href="/" className={clsx("animate-fadeIn sm:relative sm:z-[30]",{"sm:hidden ": isExpanded})}>
             <Image
               src={ImageLogo.src}
               width={ImageLogo.width}
@@ -61,17 +62,17 @@ const Header = () => {
               </Link>
             </div>
             <button
-              onClick={() => setMenuModal(!menuModal)}
-              className="flex-col h-[3.33vw] w-[4.10vw] gap-[1.03vw] hidden md:flex"
+              onClick={() => setMenuModal({isMenuModalActive: true})}
+              className="flex-col  h-[3.33vw] w-[4.10vw] gap-[1.03vw] hidden md:flex sm:relative sm:z-[30]"
             >
               <span className={clsx('block h-[2px] w-full rounded-[5px] bg-black transition-transform duration-300', {
-                'origin-[2px] rotate-[45deg] sm:origin-[0.056vw]': menuModal,
+                'origin-[2px] rotate-[45deg] sm:origin-[0.056vw]': isMenuModalActive,
               })} />
               <span className={clsx('block h-[2px] w-full rounded-[5px] bg-black transition-opacity duration-300', {
-                'opacity-0': menuModal,
+                'opacity-0': isMenuModalActive,
               })} />
               <span className={clsx('block h-[2px] w-full rounded-[5px] bg-black transition-transform duration-300', {
-                'origin-[1px] rotate-[-45deg] sm:origin-[0.055vw]': menuModal,
+                'origin-[1px] rotate-[-45deg] sm:origin-[0.055vw]': isMenuModalActive,
               })} />
             </button>
           </div>

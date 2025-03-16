@@ -27,14 +27,11 @@ export const SearchForm:FC<ComponentProps> = ({isExpanded,setIsExpanded}) => {
     }
   };
 
-  const isMobile =  typeof window !== 'undefined' && window.innerWidth < 640;
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="relative">
       <input
         {...register("search", { required: true })}
         type="text"
-        placeholder={isMobile ? "" : "Search"}
         className={clsx(
           "bg-[#E5E5E5] rounded-[3.13vw] py-[0.9vw] pl-[1.04vw] pr-[2.2vw] bg-opacity-50 w-[13.54vw] text-[0.83vw] border-[1px] border-transparent outline-none transition-all placeholder:text-[0.83vw] sm:placeholder:text-[3.59vw] sm:text-[3.59vw] sm:rounded-[15.38vw] sm:h-[10.77vw] sm:py-0 sm:w-[14.36vw] sm:text-[16px]", {
             "!border-[#F2B705]": errors.search,

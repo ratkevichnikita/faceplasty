@@ -20,7 +20,7 @@ const SpecialOfferButton = () => {
   
   if(open) {
     return (
-      <div className="animate-fadeIn fixed w-[87.50vw] left-1/2 bottom-[20px] -translate-x-1/2 z-[20] ">
+      <div className="animate-fadeIn fixed w-[87.50vw] left-1/2 bottom-[20px] -translate-x-1/2 z-[15] ">
         <div className="relative">
           <button onClick={handleClose} className="size-[2.08vw] flex items-center justify-center rounded-full bg-white border border-[rgba(0,0,0,0.2)] absolute right-0 top-[-2.5vw] sm:top-[-11.5vw] sm:size-[10.26vw]">
            <div>

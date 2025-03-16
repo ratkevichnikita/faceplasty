@@ -61,7 +61,7 @@ const Footer = () => {
                 <Link
                   href="https://course.fp-platform.online/login?returnUrl=/"
                   rel="nofollow"
-                  className="h-[3.13vw] bg-orange flex items-center text-white text-[0.83vw] px-[2.08vw] font-semibold border border-transparent transition-bg duration-300 rounded-[2.04vw] hover:border-white transition-bg duration-300 hover:bg-black uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
+                  className="h-[3.13vw] flex justify-center bg-orange flex items-center text-white text-[0.83vw] px-[2.08vw] font-semibold border border-transparent transition-bg duration-300 rounded-[2.04vw] hover:border-white transition-bg duration-300 hover:bg-black uppercase sm:gap-[2.05vw] sm:text-[3.59vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >
                   log in
                 </Link>

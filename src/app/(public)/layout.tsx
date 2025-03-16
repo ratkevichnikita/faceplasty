@@ -5,6 +5,7 @@ import AuthModal from "@/widgets/Modals/AuthModal";
 import Footer from "@/widgets/Footer";
 import TrialModal from "@/widgets/Modals/TrialModal/index";
 import WidgetModal from "@/widgets/Modals/WidgetModal";
+import MenuModal from "@/widgets/Modals/MenuModal";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -15,6 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <AuthModal />
       <TrialModal />
       <WidgetModal />
+      <MenuModal />
     </DefaultLayout>
   );
 };
