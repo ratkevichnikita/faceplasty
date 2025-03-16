@@ -17,10 +17,10 @@ interface ComponentProps {
 const CardProduct:FC<ComponentProps> = ({product}) => {
   const {setWidgetModal,setTrialModal} = useAppStore()
   const imageUrl = product.image?.cloudKey ? process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}` : ImageNoImg.src
-  const widgetId = extractWidgetId(product.internalName)
-  const linkId = extractLinkId(product.internalName)
+  const widgetId = extractWidgetId(product?.internalName ?? '')
+  const linkId = extractLinkId(product?.internalName ?? '')
 
-  const buyProductHandle = (widgetId) => {
+  const buyProductHandle = (widgetId: string) => {
     setWidgetModal({isWidgetModalActive:true, isWidgetModalId:widgetId})
   }
 
