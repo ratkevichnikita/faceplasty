@@ -73,7 +73,7 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
         <div className="flex items-center justify-between p-[1.04vw] border-t border-t-[#00000014] sm:p-[5.13vw] sm:gap-[3.08vw] sm:flex-col">
           {widgetId
             ? <button
-              onClick={() => buyProductHandle(widgetId)}
+              onClick={() => buyProductHandle(widgetId ?? '')}
               className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
                 '!bg-orange': product.isPremium
               })}>
