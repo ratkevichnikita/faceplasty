@@ -2,7 +2,6 @@
 import React from 'react';
 import { useAppStore } from '@/shared/store/AppStore';
 import { Dialog, DialogPanel } from '@headlessui/react';
-import {useRouter} from "next/navigation";
 import Link from "next/link";
 
 const MenuModal = () => {
