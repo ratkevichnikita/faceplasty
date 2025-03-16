@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useAppStore } from '@/shared/store/AppStore';
 import { Dialog, DialogPanel } from '@headlessui/react';
 
-const AuthModal = () => {
+const TrialModal = () => {
   const { isTrialModalActive, setTrialModal } = useAppStore();
   const widgetContainerRef = useRef<HTMLDivElement>(null);
 
@@ -90,4 +90,4 @@ const AuthModal = () => {
   );
 };
 
-export default AuthModal;
+export default TrialModal;

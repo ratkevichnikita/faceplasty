@@ -67,7 +67,7 @@ const SectionContacts = () => {
         </p>
         <div className="flex items-center justify-center gap-[2.08vw] sm:flex-col sm:gap-[3.08vw]">
           <Link
-            href="https://api.whatsapp.com/send?phone=971508610413"
+            href="https://api.whatsapp.com/send/?phone=37493786168&text=%EF%BF%BD+Hi+&type=phone_number&app_absent=0"
             rel="nofollow"
             className="w-[19.17vw] h-[4.17vw] rounded-[2.08vw] flex items-center justify-center gap-[0.42vw] bg-purple text-white text-[0.83vw] uppercase transition-bg duration-300 hover:bg-black hover:text-white sm:text-[3.59vw] sm:gap-[2.05vw] sm:rounded-[10.26vw] sm:h-[12.05vw] sm:w-[76.92vw]"
           >

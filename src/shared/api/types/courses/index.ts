@@ -12,7 +12,6 @@ interface Image {
 export enum CategoryName {
   BODY = "BODY",
   FACE = "FACE",
-  CLUB = "CLUB",
   MIND = "MIND",
 }
 

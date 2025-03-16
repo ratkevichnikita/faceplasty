@@ -53,7 +53,7 @@ body.isPaymentOpen:before {
   background: transparent;
 }
 
-iframe#QkoGrAWzK0GvAUOyO_4r_g {
+.global-modal iframe {
   position: absolute;
   left: 0;
   top: -2vw;

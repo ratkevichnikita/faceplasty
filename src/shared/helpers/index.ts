@@ -1,4 +1,4 @@
-import {CategoryName, Product} from "@/shared/api/types/courses";
+import {BESTSELLER_COURSE_ID, CategoryName, Product} from "@/shared/api/types/courses";
 
 export function nanosecondsToTime(nanoseconds: number) {
   const totalSeconds = Math.floor(nanoseconds / 1000000000);
@@ -18,7 +18,6 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
   }
 
   const storedData = JSON.parse(localStorage.getItem("courseData") || "[]");
-  const BESTSELLER_COURSE_ID = "YlOCqtnHD0iy47m1i-N-4w"; // Айди бестселлера
 
   return products
     ?.filter(
@@ -46,12 +45,23 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
         ...course,
         rating: existingData.rating,
         students: existingData.students,
-        isPremium, // Добавляем флаг isPremium
+        isPremium,
       };
     });
 };
 
-export function getHref(value: string): string | null {
-  const match = value.match(/https?:\/\/[^\s]+/);
-  return match ? match[0] : null;
+export function extractWidgetId(inputString) {
+  const match = inputString.match(/widgetId:([\w-]+)/i);
+  if (match) {
+    return match[1];
+  }
+  return null;
+}
+
+export function extractLinkId(inputString) {
+  const match = inputString.match(/link:([\w-]+)/i);
+  if (match) {
+    return match[1];
+  }
+  return null;
 }

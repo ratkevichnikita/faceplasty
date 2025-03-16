@@ -45,7 +45,7 @@ const Footer = () => {
                   <span className="font-semibold text-[0.83vw] uppercase sm:text-[3.59vw]">support@fp-platform.online</span>
                 </Link>
                 <Link
-                  href="https://api.whatsapp.com/send?phone=971508610413"
+                  href="https://api.whatsapp.com/send/?phone=37493786168&text=%EF%BF%BD+Hi+&type=phone_number&app_absent=0"
                   rel="nofollow"
                   className="flex items-center bg-green justify-center gap-[0.52vw] h-[3.13vw] border border-transparent transition-bg duration-300 hover:bg-black hover:border-white hover:text-white text-white rounded-[2.04vw] w-[14.58vw] sm:gap-[2.05vw] sm:rounded-[10.26vw] sm:w-full sm:h-[12.05vw]"
                 >

@@ -84,6 +84,7 @@ const Homepage = ({products,events}:ComponentProps) => {
               width={ImageMain.width}
               height={ImageMain.height}
               priority
+              quality={95}
               alt="image"
               className="w-[41.93vw] h-[30.99vw]"
             />

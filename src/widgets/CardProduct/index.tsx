@@ -7,15 +7,23 @@ import ImageNoImg from '@/../public/images/image-no-img.webp';
 import {Product} from "@/shared/api/types/courses";
 import clsx from "clsx";
 import Link from "next/link";
-import {getHref} from "@/shared/helpers";
+import {extractLinkId, extractWidgetId} from "@/shared/helpers";
+import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   product: Product
 }
 
 const CardProduct:FC<ComponentProps> = ({product}) => {
-  const href = getHref(product?.internalName ?? '')
+  const {setWidgetModal,setTrialModal} = useAppStore()
   const imageUrl = product.image?.cloudKey ? process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}` : ImageNoImg.src
+  const widgetId = extractWidgetId(product.internalName)
+  const linkId = extractLinkId(product.internalName)
+
+  const buyProductHandle = (widgetId) => {
+    setWidgetModal({isWidgetModalActive:true, isWidgetModalId:widgetId})
+  }
+
   return (
     <div className="animate-fadeIn shrink-0 w-full relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:max-w-full sm:rounded-[10.26vw]">
       {product.isPremium && <div className="flex items-center justify-center absolute left-[1.04vw] top-[1.04vw] bg-orange size-[3.13vw] rounded-full z-[2] sm:top-[5.13vw] sm:left-[5.13vw] sm:size-[10.26vw]">
@@ -63,14 +71,25 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
           </div>
         </div>
         <div className="flex items-center justify-between p-[1.04vw] border-t border-t-[#00000014] sm:p-[5.13vw] sm:gap-[3.08vw] sm:flex-col">
-           <button className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
-             '!bg-orange': product.isPremium
-           })}>
-            <span className="text-[0.83vw] sm:text-[4.10vw]"> BUY ${product.price}</span>
-           </button>
-          {href && (
+          {widgetId
+            ? <button
+              onClick={() => buyProductHandle(widgetId)}
+              className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
+                '!bg-orange': product.isPremium
+              })}>
+              <span className="text-[0.83vw] sm:text-[4.10vw]"> BUY ${product.price}</span>
+            </button>
+            : <button
+              onClick={() => setTrialModal({ isTrialModalActive: true })}
+              className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
+                '!bg-orange': product.isPremium
+              })}>
+              <span className="text-[0.83vw] sm:text-[4.10vw]"> BUY ${product.price}</span>
+            </button>
+          }
+          {linkId && (
             <Link
-              href={href}
+              href={'https://faceplasty.online/'+linkId}
               className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[11.67vw] h-[3.13vw] block  ml-auto  border border-[#00000014] sm:gap-[2.56vw] sm:h-[14.62vw] sm:w-full"
             >
               <span className="font-semibold text-[0.83vw] text-center uppercase sm:text-[4.10vw]">Jump to course</span>
