@@ -50,7 +50,7 @@ export const enhanceProductsWithData = (products: Product[] | null): Product[] =
     });
 };
 
-export function extractWidgetId(inputString) {
+export function extractWidgetId(inputString: string) {
   const match = inputString.match(/widgetId:([\w-]+)/i);
   if (match) {
     return match[1];
@@ -58,7 +58,7 @@ export function extractWidgetId(inputString) {
   return null;
 }
 
-export function extractLinkId(inputString) {
+export function extractLinkId(inputString: string) {
   const match = inputString.match(/link:([\w-]+)/i);
   if (match) {
     return match[1];
