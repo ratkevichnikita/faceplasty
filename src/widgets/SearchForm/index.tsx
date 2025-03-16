@@ -49,6 +49,11 @@ export const SearchForm:FC<ComponentProps> = ({isExpanded,setIsExpanded}) => {
           className="size-[1.25vw] sm:size-[4.10vw]"
         />
       </button>
+      <span className={clsx("block absolute z-[5] opacity-60 pointer-events-none text-[0.83vw] left-[1.04vw] top-1/2 -translate-y-1/2 sm:hidden", {
+        "hidden": searchInput?.trim()
+      })}>
+        Search
+      </span>
     </form>
   );
 }
