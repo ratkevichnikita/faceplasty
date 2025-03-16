@@ -80,7 +80,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
         : <div className="flex gap-[1.04vw] mb-[2.08vw] sm:flex-wrap sm:gap-[3.08vw] sm:mb-[6.15vw]">
             <button
               className={clsx(
-                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 hover:bg-green hover:text-white sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
                 { "bg-green text-white !bg-opacity-100": bestSellerActive }
               )}
               onClick={handleFilterBestseller}
@@ -90,7 +90,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
             <button
               onClick={() => handleFilter('7697')}
               className={clsx(
-                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 hover:bg-green hover:text-white sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
                 { "bg-green text-white !bg-opacity-100": activeCategory === '7697' }
               )}
             >
@@ -100,7 +100,7 @@ const SectionCoursesList: FC<ComponentProps> = ({ products }) => {
               <button
                 key={p.id}
                 className={clsx(
-                  "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
+                  "bg-[#E5E5E5] flex flex-col items-center justify-center bg-opacity-50 rounded-[2.08vw] h-[3.13vw] w-[10.73vw] transition-bg duration-300 hover:bg-green hover:text-white sm:rounded-[5.13vw] sm:px-[6.15vw] sm:w-auto sm:h-[11.03vw]",
                   { "bg-green text-white !bg-opacity-100": activeCategory === p.id }
                 )}
                 onClick={() => handleFilter(p.id)}

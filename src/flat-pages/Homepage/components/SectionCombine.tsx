@@ -35,7 +35,7 @@ const SectionCombine = () => {
             <button
               key={item.id}
               onClick={() => switcherHandler(item.id)}
-              className={clsx(" text-black bg-[#E5E5E5] h-[3.13vw] w-[11.98vw] rounded-r-[2.04vw] transition-all duration-300 sm:w-[29.49vw] sm:h-[11.03vw] sm:rounded-r-[5.13vw]", {
+              className={clsx(" text-black bg-[#E5E5E5] h-[3.13vw] w-[11.98vw] rounded-r-[2.04vw] transition-all duration-300 hover:text-white hover:bg-green sm:w-[29.49vw] sm:h-[11.03vw] sm:rounded-r-[5.13vw]", {
                 "rounded-l-[2.04vw] rounded-r-none sm:rounded-r-none sm:rounded-l-[5.13vw]": item.id === '1',
                 "rounded-r-[2.04vw] rounded-l-none sm:rounded-l-none sm:rounded-r-[5.13vw]": item.id === '2',
                 "text-white bg-green": item.id == itemId
