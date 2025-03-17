@@ -62,11 +62,11 @@ const TrialModal = () => {
     <Dialog
       open={isTrialModalActive}
       as="div"
-      className="relative z-10 focus:outline-none"
+      className="relative z-[100] focus:outline-none"
       onClose={() => setTrialModal({ isTrialModalActive: false })}
     >
-      <div className="fixed inset-0 z-10 w-screen overflow-y-auto font-lato">
-        <div className="flex min-h-full items-center justify-center bg-[rgba(0,0,0,0.3)]">
+      <div className="fixed inset-0 z-[100] w-screen overflow-y-auto font-lato">
+        <div className="flex min-h-full items-center justify-center bg-[rgba(0,0,0,0.3)] sm:pt-[50px]">
           <DialogPanel
             transition
             className="w-full flex items-center justify-center duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
@@ -81,7 +81,7 @@ const TrialModal = () => {
               </button>
 
               {/* Контейнер для iframe */}
-              <div ref={widgetContainerRef} className="animate-fadeIn delay-500 relative overflow-auto rounded-[2.04vw] h-[90vh] w-[30vw] lg:w-[45vw] sm:h-[85vh] sm:w-[88vw] sm:rounded-[5vw]"/>
+              <div ref={widgetContainerRef} className="animate-fadeIn global-modal delay-500 relative overflow-auto rounded-[2.04vw] h-[90vh] w-[30vw] lg:w-[45vw] sm:h-[85vh] sm:w-[88vw] sm:rounded-[5vw]"/>
             </div>
           </DialogPanel>
         </div>

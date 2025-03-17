@@ -23,28 +23,29 @@ const VideoPlayer = () => {
       setShowOverlay(true);
     }
   };
-
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 540;
   return (
     <div
       className="relative size-full"
-      onMouseEnter={() => isPlaying && setShowOverlay(true)}
-      onMouseLeave={() => isPlaying && setShowOverlay(false)}
+      onMouseEnter={() => (isPlaying && !isMobile) && setShowOverlay(true)}
+      onMouseLeave={() => (isPlaying && !isMobile) && setShowOverlay(false)}
     >
       <video
         ref={videoRef}
         src="/video/original.mp4"
-        preload="auto"
+        preload="metadata"
+        poster="/video/video-preview.webp"
         playsInline
         disablePictureInPicture
-        controls={isPlaying}
+        controls={isPlaying || isMobile}
         controlsList="nodownload nofullscreen noremoteplayback"
         className="absolute left-0 top-0 rounded-[2.08vw] overflow-hidden w-full h-hull sm:rounded-[5.13vw]"
       />
 
-      {showOverlay && (
-        <button onClick={togglePlayPause} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      {(showOverlay && !isMobile) && (
+        <button onClick={togglePlayPause} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[10]">
           {isPlaying
-            ? <Image src={IconPause.src} width={IconPause.width} height={IconPause.height} alt="Pause" className="size-[4.17vw]" />
+            ? <Image src={IconPause.src} width={IconPause.width} height={IconPause.height} alt="Pause" className="size-[4.17vw] sm:size-[10.26vw]" />
             : <Image src={IconPlay.src} width={IconPlay.width} height={IconPlay.height} alt="Play" className="size-[4.17vw] sm:size-[10.26vw]" />
           }
         </button>

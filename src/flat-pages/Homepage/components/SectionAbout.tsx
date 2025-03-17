@@ -1,15 +1,12 @@
-'use client'
 import React from 'react';
 import Image from "next/image";
 import VideoPlayer from "@/widgets/VideoPlayer";
-import IconArrow from "@/../public/icons/icon-arrow-small.svg";
 import Icon1 from '@/../public/icons/icon-about1.svg';
 import Icon2 from '@/../public/icons/icon-about2.svg';
 import Icon3 from '@/../public/icons/icon-about3.svg';
-import {useAppStore} from "@/shared/store/AppStore";
+import TrialButton from "@/widgets/TrialButton";
 
 const SectionAbout = () => {
-  const {setTrialModal} = useAppStore()
   return (
     <>
       <div className="hidden relative w-full h-[51.28vw] mb-[6.15vw] sm:block">
@@ -42,7 +39,7 @@ const SectionAbout = () => {
                 className="hidden size-[5.13vw] sm:block shrink-0"
               />
               <div className="sm:text-left">
-                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] sm:mb-[1.54vw] sm:text-[4.10vw] sm:[&>br]:hidden">6 WEEKLY <br/> workouts</p>
+                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] sm:mb-[1.54vw] sm:text-[4.10vw] sm:[&>br]:hidden">6 weekly <br/> workouts</p>
                 <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw] sm:max-w-full sm:text-[2.56vw]">With top trainers. Each session lasts 15–20 minutes</p>
               </div>
             </li>
@@ -68,33 +65,15 @@ const SectionAbout = () => {
                 className="hidden size-[5.13vw] sm:block shrink-0"
               />
               <div className="sm:text-left">
-                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] sm:mb-[1.54vw] sm:text-[4.10vw] sm:[&>br]:hidden">community <br/> of like-minded people</p>
-                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw] sm:text-left sm:max-w-full sm:text-[2.56vw]">Whatsap chat with our experts</p>
+                <p className="font-medium leading-[1.2em] text-[2.08vw] mb-[0.52vw] sm:mb-[1.54vw] sm:text-[4.10vw] sm:[&>br]:hidden">Community <br/> of like-minded people</p>
+                <p className="text-[0.83vw] max-auto text-center max-w-[23.54vw] sm:text-left sm:max-w-full sm:text-[2.56vw]">WhatsApp chat with our experts</p>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <div className="flex items-center gap-[1.04vw] pt-[1.48vw] sm:flex-col sm:gap-[3.08vw] sm:pt-[6.15vw] sm:pb-[11.79vw]">
-        <button
-          onClick={() => setTrialModal({isTrialModalActive:true})}
-          className="bg-orange !px-[4.69vw] text-white group button flex items-center gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[3.08vw] sm:justify-center sm:text-[3.59vw] sm:gap-[2.2vw] sm:w-full"
-        >
-          join the club
-          <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
-            <Image
-              src={IconArrow.src}
-              width={IconArrow.width}
-              height={IconArrow.height}
-              alt="image"
-              className="w-[0.89vw] h-[0.63vw] sm:w-[2.56vw] sm:h-[1.79vw]"
-            />
-          </span>
-        </button>
-        <p className="text-[0.83vw] font-rubik max-w-[19.85vw] opacity-[70%] sm:font-lato sm:text-center sm:max-w-[70.51vw] sm:text-[3.59vw]">
-          One-week trial for $1, then $47/month. <br/>
-          You can cancel your subscription at any time.
-        </p>
+      <div className="flex pt-[1.48vw] sm:flex-col sm:gap-[3.08vw] sm:pt-[6.15vw] sm:pb-[11.79vw]">
+        <TrialButton variant="horizontal"  text="join the club" description=" One-week trial for $1, then $47/month. <br/> You can cancel your subscription at any time." />
       </div>
     </>
   );

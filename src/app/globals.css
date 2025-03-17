@@ -71,8 +71,8 @@ body.isPaymentOpen:before {
     font-size: 3.59vw;
     border-radius: 10.26vw;
   }
-
-  iframe#QkoGrAWzK0GvAUOyO_4r_g {
-    top: -8vw;
+  .global-modal iframe {
+    top: -10vw;
   }
+
 }

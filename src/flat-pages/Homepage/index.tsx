@@ -1,8 +1,6 @@
-'use client'
 import React from 'react';
 import Image from "next/image";
 import ImageMain from '@/../public/images/image-header.webp';
-import IconArrow from '@/../public/icons/icon-arrow-small.svg';
 import SectionEvents from "@/flat-pages/Homepage/components/SectionEvents";
 import SectionCoursesList from "@/flat-pages/Homepage/components/SectionCoursesList";
 import SectionContacts from "@/flat-pages/Homepage/components/SectionContacts";
@@ -16,7 +14,6 @@ import SectionWithMap from "@/flat-pages/Homepage/components/SectionWithMap";
 import SectionAbout from "@/flat-pages/Homepage/components/SectionAbout";
 import SpecialOfferButton from "@/widgets/SpecialOfferButton";
 import Link from "next/link";
-import {useAppStore} from "@/shared/store/AppStore";
 
 interface ComponentProps {
   products: Product[] | null
@@ -24,7 +21,6 @@ interface ComponentProps {
 }
 
 const Homepage = ({products,events}:ComponentProps) => {
-  const {setTrialModal} = useAppStore()
   return (
     <div className="container ">
       {/*MAIN SECTION */}
@@ -48,29 +44,12 @@ const Homepage = ({products,events}:ComponentProps) => {
               >
                 ALL COURSES
               </Link>
-              <button
-                onClick={() => setTrialModal({isTrialModalActive:true})}
-                className="button bg-orange w-[16.98vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.2vw] sm:w-full"
-              >
-                <span className="shrink-0">become a member</span>
-                <span className="rounded-full shrink-0 flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
-                  <Image
-                    src={IconArrow.src}
-                    width={IconArrow.width}
-                    height={IconArrow.height}
-                    alt="image"
-                    className="w-[0.89vw] h-[0.63vw] sm:w-[2.56vw] sm:h-[1.79vw]"
-                  />
-                </span>
-              </button>
-              <p className="block text-[0.83vw] font-rubik max-w-[8.85vw] opacity-[70%] sm:hidden">
-                Get a trial week for $1,
-                then $47/month
-              </p>
-              <p className="hidden font-lato opacity-[70%] text-center text-[3.59vw] max-w-[70.51vw] sm:block ">
-                One-week trial for $1, then $47/month.
-                You can cancel your subscription at any time.
-              </p>
+              <div className="block sm:hidden">
+                <TrialButon className="w-[17.19vw]" variant="horizontal" text="become a member" description="Get a trial week for $1, <br> then $47/month" />
+              </div>
+              <div className="hidden sm:block w-full">
+                <TrialButon className="w-full" variant="vertical" text="become a member" description="One-week trial for $1, then $47/month.<br> You can cancel your subscription at any time." />
+              </div>
             </div>
           </div>
           <div className="relative sm:hidden">
@@ -114,7 +93,7 @@ const Homepage = ({products,events}:ComponentProps) => {
         <div className="pt-[2.08vw] sm:pt-0">
           <SectionCoursesList products={products}/>
           <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw] sm:pt-[6.15vw] sm:gap-[3.08vw]">
-            <TrialButon text="try all courses for $1" />
+            <TrialButon text="try all courses for $1" variant="vertical" description={`<span>Trial week for $1,</span>, then $47/month <br/> You can cancel your subscription at any time.`} />
           </div>
         </div>
       </div>
@@ -131,7 +110,11 @@ const Homepage = ({products,events}:ComponentProps) => {
       <div className="py-[5.21vw] sm:py-[7.69vw]">
         <SectionCombine />
         <div className="flex flex-col items-center text-center justify-center gap-[1.04vw] pt-[2.08vw] sm:pt-[6.15vw] sm:gap-[3.08vw]">
-          <TrialButon text="start your transformation" />
+          <TrialButon
+            text="start your transformation"
+            variant="vertical"
+            description={`<span>Get a trial week for $1,</span> then $47/month.<br> You can cancel your subscription at any time.`}
+          />
         </div>
       </div>
       {/*SECTION WITH QUOTE*/}

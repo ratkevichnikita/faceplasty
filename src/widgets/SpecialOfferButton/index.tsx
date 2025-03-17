@@ -1,20 +1,11 @@
 'use client'
 import React, {useState} from 'react';
-import Image from "next/image";
-import IconArrow from "@/../public/icons/icon-arrow-small.svg";
-import {useAppStore} from "@/shared/store/AppStore";
+import TrialButton from "@/widgets/TrialButton";
 
 const SpecialOfferButton = () => {
-  const {setTrialModal} = useAppStore()
-
   const [open,setOpen] = useState<boolean>(true)
 
   const handleClose = () => {
-    setOpen(false)
-  }
-
-  const handleClick = () => {
-    setTrialModal({isTrialModalActive:true})
     setOpen(false)
   }
   
@@ -32,21 +23,7 @@ const SpecialOfferButton = () => {
             <p className="font-rubik  text-[2.08vw] sm:text-[4.10vw]">
               <span className="text-main font-semibold">Try first week for $1,</span> then $47/month
             </p>
-            <button
-              onClick={handleClick}
-              className="block button bg-orange h-[4.17vw] flex items-center justify-center text-white group gap-[0.63vw] hover:bg-white hover:text-orange hover:border-orange sm:gap-[2.56vw] sm:w-[64.10vw]"
-            >
-              Become a member
-              <span className="rounded-full flex items-center justify-center bg-white size-[2.08vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:size-[5.13vw]">
-              <Image
-                src={IconArrow.src}
-                width={IconArrow.width}
-                height={IconArrow.height}
-                alt="image"
-                className="w-[0.89vw] h-[0.63vw] sm:w-[2.56vw] sm:h-[1.79vw]"
-              />
-            </span>
-            </button>
+            <TrialButton variant="horizontal" text="Become a member" />
           </div>
         </div>
       </div>

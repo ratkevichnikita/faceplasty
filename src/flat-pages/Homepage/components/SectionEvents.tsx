@@ -1,7 +1,7 @@
 'use client'
 import React, {FC, useState} from 'react';
 import Image from "next/image";
-import ImageEvents from "../../../../public/images/img-events.webp";
+import ImageEvents from "@/../public/images/img-events.webp";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import {Event} from "@/shared/api/types/events";
@@ -62,7 +62,7 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
           return (
             <SwiperSlide key={item.id} className="rounded-[2.08vw] max-w-[300px] mr-[10px] overflow-hidden border border-[#00000014] shadow-cardShadow sm:rounded-[10.26vw]">
                 <Image
-                  src={design.registration.coverUrl}
+                  src={design.registration.coverUrl ? design.registration.coverUrl : ImageEvents.src}
                   width={ImageEvents.width}
                   height={ImageEvents.height}
                   alt="image"

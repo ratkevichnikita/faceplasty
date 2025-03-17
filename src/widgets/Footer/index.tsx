@@ -26,9 +26,9 @@ const Footer = () => {
                 International Faceplastic And Osteopathy- FZCO <br/> DSO-IFZA, DSO-IFZA, DSO-IFZA, Dubai, 0000, Dubai License Number. 14760 Licensing Authority Dubai Silicon Oasis . +971504389834
               </p>
               <div className="space-y-[0.52vw] mb-[1.04vw] text-[0.94vw] sm:mb-[6.15vw] sm:text-[3.08vw]">
-                <Link href="/oferta" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Contract Information</Link>
-                <Link href="/oferta" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Cookie Policy</Link>
-                <Link href="/oferta" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Legal notice</Link>
+                <Link href="/oferta" target="_blank" rel="nofollow" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Contract Information</Link>
+                <Link href="https://faceplasty.online/cookiepolicy" target="_blank" rel="nofollow" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Cookie Policy</Link>
+                <Link href="https://faceplasty.online/oferta2" target="_blank" rel="nofollow" className="block w-fit border-b border-b-transparent transition-border duration-300 hover:border-b-white">Legal notice</Link>
               </div>
               <div className="flex gap-[1.04vw] mb-[1.04vw] sm:mb-[3.2vw] sm:flex-col sm:max-w-[75.64vw] sm:mx-auto sm:gap-[3.08vw]">
                 <Link
