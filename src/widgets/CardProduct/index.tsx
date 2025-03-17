@@ -74,15 +74,15 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
           {widgetId
             ? <button
               onClick={() => buyProductHandle(widgetId ?? '')}
-              className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
-                '!bg-orange': product.isPremium
+              className={clsx("uppercase font-semibold rounded-[2.08vw] text-center text-[0.83vw] transition-all duration-300  bg-purple text-white !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
+                '!bg-orange hover:!bg-black': product.isPremium
               })}>
               <span className="text-[0.83vw] sm:text-[4.10vw]"> BUY ${product.price}</span>
             </button>
             : <button
               onClick={() => setTrialModal({ isTrialModalActive: true })}
-              className={clsx("block bg-purple text-white button !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
-                '!bg-orange': product.isPremium
+              className={clsx("uppercase font-semibold rounded-[2.08vw] text-center text-[0.83vw] transition-all duration-300  bg-purple text-white !h-[3.13vw] !px-[1.04vw] hover:bg-black hover:text-white sm:!h-[14.62vw] sm:w-full", {
+                '!bg-orange hover:!bg-black': product.isPremium
               })}>
               <span className="text-[0.83vw] sm:text-[4.10vw]"> BUY ${product.price}</span>
             </button>

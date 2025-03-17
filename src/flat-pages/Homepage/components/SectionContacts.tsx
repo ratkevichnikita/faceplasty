@@ -28,7 +28,12 @@ const SectionContacts = () => {
             Follow us for more!
           </p>
           <div className="flex justify-center gap-[2.08vw] sm:flex-col sm:gap-[3.08vw]">
-            <Link href="https://www.instagram.com/dr_ales_osteopath" target="_blank" rel="nofollow" className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white text-black font-medium flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] sm:h-[12.05vw] sm:rounded-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]">
+            <Link
+              href="https://www.instagram.com/dr_ales_osteopath"
+              target="_blank"
+              rel="nofollow"
+              className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white transition-all duration-300 hover:bg-black hover:text-white text-black font-medium flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] sm:h-[12.05vw] sm:rounded-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]"
+            >
               <Image
                 src={IconInsta2.src}
                 width={IconInsta2.width}
@@ -36,9 +41,14 @@ const SectionContacts = () => {
                 alt="instagram icon"
                 className="w-[0.99vw] h-[1.61vw] sm:w-[2.31vw] sm:h-[4.10vw]"
               />
-              <span className="text-[1.04vw] uppercase tracking-[-0.05em] sm:text-[4.10vw] sm:normal-case">dr_ales_osteopath</span>
+              <span className="text-[1.04vw] uppercase tracking-[-0.05em]  sm:text-[4.10vw] sm:normal-case">dr_ales_osteopath</span>
             </Link>
-            <Link href="https://www.facebook.com/dr.ales.osteopath/" target="_blank" rel="nofollow" className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white text-black font-medium flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] sm:h-[12.05vw] sm:rounded-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]">
+            <Link
+              href="https://www.facebook.com/dr.ales.osteopath/"
+              target="_blank"
+              rel="nofollow"
+              className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white text-black font-medium transition-all duration-300 hover:bg-black hover:text-white flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] sm:h-[12.05vw] sm:rounded-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]"
+            >
               <Image
                 src={IconFacebook.src}
                 width={IconFacebook.width}
@@ -48,7 +58,12 @@ const SectionContacts = () => {
               />
               <span className="text-[1.04vw] uppercase tracking-[-0.04em] sm:text-[4.10vw] sm:normal-case">dr.ales.osteopath</span>
             </Link>
-            <Link href="https://www.youtube.com/@dr_ales_osteopath" target="_blank" rel="nofollow" className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white text-black font-medium flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] transition-bg duration-300 hover:bg-gray sm:h-[12.05vw] sm:rounded-[10.26vw] sm:h-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]">
+            <Link
+              href="https://www.youtube.com/@dr_ales_osteopath"
+              target="_blank"
+              rel="nofollow"
+              className="h-[4.17vw] px-[2.08vw] cursor-pointer bg-white text-black font-medium flex items-center justify-center gap-[0.36vw] rounded-[2.08vw] transition-all duration-300 hover:bg-black hover:text-white sm:h-[12.05vw] sm:rounded-[10.26vw] sm:h-[10.26vw] sm:gap-[1.79vw] sm:w-[47.44vw]"
+            >
               <Image
                 src={IconYoutube.src}
                 width={IconYoutube.width}

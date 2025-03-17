@@ -142,7 +142,7 @@ const EventModal:FC<ComponentProps> = ({isActive,onClose,name, image, descriptio
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-[12.84vw] flex items-center justify-center gap-[0.5vw] bg-orange text-white font-bold h-[2.87vw] rounded-full text-[0.83vw] disabled:opacity-50 sm:w-[47.44vw] sm:h-[14.62vw] sm:text-[3.59vw]"
+                      className="w-[12.84vw] flex items-center justify-center gap-[0.5vw] transition-all duration-300 hover:bg-black hover:text-white bg-orange text-white font-bold h-[2.87vw] rounded-full text-[0.83vw] disabled:opacity-50 sm:w-[47.44vw] sm:h-[14.62vw] sm:text-[3.59vw]"
                     >
                       Register for Event
                       {loading && <Spinner variant="small" color="black" />}
