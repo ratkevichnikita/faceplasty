@@ -21,13 +21,25 @@ interface ComponentProps {
 const SectionEvents:FC<ComponentProps> = ({events}) => {
   const [modalActive,setModalActive] = useState<string | null>('')
 
+  const filteredEvents = events && events
+    .filter((item) => {
+      const currentDate = dayjs();
+      const scheduledDate = dayjs(item.scheduledDate);
+      return scheduledDate.isAfter(currentDate);
+    })
+    .filter(item => !item.templateDurationMs)
+  console.log('filteredEvents',filteredEvents)
   return (
     <>
       <Swiper
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={4}
         modules={[Navigation]}
         breakpoints={{
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          },
           800: {
             slidesPerView: 3,
             spaceBetween: 15
@@ -47,20 +59,14 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
         }}
         className="font-lato !py-[20px] !my-[-20px]"
       >
-        {events && events
-          .filter((item) => {
-            const currentDate = dayjs();
-            const scheduledDate = dayjs(item.scheduledDate);
-            return scheduledDate.isAfter(currentDate);
-          })
-          .filter(item => !item.templateDurationMs)
+        {filteredEvents && filteredEvents
           .sort((a, b) => dayjs(a.scheduledDate).diff(dayjs(b.scheduledDate)))
           .map((item) => {
           const design = JSON.parse(item.designSettingsJson);
           const date = dayjs(item.scheduledDate).format("D MMM HH:mm")
           const durationToNano = item.duration + '00';
           return (
-            <SwiperSlide key={item.id} className="rounded-[2.08vw] max-w-[300px] mr-[10px] overflow-hidden border border-[#00000014] shadow-cardShadow sm:rounded-[10.26vw]">
+            <SwiperSlide key={item.id} className="rounded-[2.08vw] mr-[10px] overflow-hidden border border-[#00000014] shadow-cardShadow max-w-[22.63vw] lg:max-w-[28.13vw] sm:max-w-[75.13vw] sm:rounded-[10.26vw]">
                 <Image
                   src={design.registration.coverUrl ? design.registration.coverUrl : ImageEvents.src}
                   width={ImageEvents.width}
