@@ -91,6 +91,7 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
           {linkId && (
             <Link
               href={'https://faceplasty.online/'+linkId}
+              target="_blank"
               className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[11.67vw] h-[3.13vw] block  ml-auto  border border-[#00000014] sm:gap-[2.56vw] sm:h-[14.62vw] sm:w-full"
             >
               <span className="font-semibold text-[0.83vw] text-center uppercase sm:text-[4.10vw]">Jump to course</span>
