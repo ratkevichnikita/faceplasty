@@ -38,7 +38,7 @@ const Homepage = ({products,events}:ComponentProps) => {
             </p>
             <div className="flex items-center gap-[1.04vw] sm:gap-[3.08vw] sm:flex-col">
               <Link
-                href="https://course.fp-platform.online/login?returnUrl=/"
+                href="#courses"
                 rel="nofollow"
                 className="bg-purple flex justify-center flex items-center !px-[1.56vw] text-white button hover:bg-black hover:text-white sm:w-full"
               >
