@@ -1,15 +1,19 @@
-import React, {FC} from 'react';
+'use client'
+import React from 'react';
 import SearchContent from "@/widgets/SearchPage/SearchContent";
 import Link from "next/link";
 import Image from "next/image";
 import IconBack from '@/../public/icons/icon-arrow-back.svg';
+import { useSearchParams } from 'next/navigation';
 
-interface ComponentProps {
-  searchParams: Promise<{ [key: string]: string }>
-}
+// interface ComponentProps {
+//   searchParams: Promise<{ [key: string]: string }>
+// }
 
-const Page:FC<ComponentProps> = async ({searchParams}) => {
-  const { query } = await searchParams;
+const Page = async () => {
+  // const { query } = await searchParams;
+  const searchParams = useSearchParams();
+  const query = searchParams.get('query');
 
   return (
    <div className="py-[5.21vw] sm:py-[7.69vw]">

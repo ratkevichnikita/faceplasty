@@ -28,7 +28,7 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
       return scheduledDate.isAfter(currentDate);
     })
     .filter(item => !item.templateDurationMs)
-  console.log('filteredEvents',filteredEvents)
+
   return (
     <>
       <Swiper

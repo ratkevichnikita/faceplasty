@@ -1,11 +1,14 @@
 'use client'
 import React, { useState } from 'react';
+import Image, { StaticImageData } from "next/image";
+import ImageFaq from '@/../public/images/image-faq.webp';
 import clsx from "clsx";
 
 interface IFaqData {
   id: number;
   question: string;
   answer: string;
+  image?: StaticImageData
 }
 
 const faqData: IFaqData[] = [
@@ -46,7 +49,8 @@ const faqData: IFaqData[] = [
   {
     id: 6,
     question: 'Do you provide the option to cancel or get a refund?',
-    answer: 'For any reason the course does not meet your expectations, we have you covered. You can cancel your subscription at any time with just one click. You can also request a full refund by contacting our email support at support@fp-platform.online within 14 days after payment — no questions asked.',
+    answer: 'For any reason the course does not meet your expectations, we have you covered. You can cancel your subscription at any time with just one click.',
+    image: ImageFaq
   },
 ];
 
@@ -87,8 +91,19 @@ const SectionFaq = () => {
               </div>
             </div>
             {isOpen && (
-              <p className="animate-fadeIn pt-[1.04vw] text-[0.83vw] sm:pt-[5.13vw] sm:text-[4.10vw]">{q.answer}</p>
-            )}
+              <>
+                <p className="animate-fadeIn pt-[1.04vw] text-[0.83vw] sm:pt-[5.13vw] sm:text-[4.10vw]">{q.answer}</p>
+                {q.image &&
+                  <Image
+                    src={q.image.src}
+                    width={q.image.width}
+                    height={q.image.height}
+                    alt="image"
+                    className="rounded-[1.28vw] mt-[1.04vw] sm:mt-[3vw] sm:rounded-[3.4vw]"
+                  />
+                }
+              </>
+              )}
           </div>
         );
       })}

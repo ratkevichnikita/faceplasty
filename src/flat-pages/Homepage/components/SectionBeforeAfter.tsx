@@ -18,39 +18,65 @@ import 'swiper/css/navigation';
 import clsx from "clsx";
 
 interface IReviewsData {
-  text: string
+  text: string[]
   id: number
   image: StaticImageData
+  title: string
 }
 
 const reviewsData:IReviewsData[] = [
   {
-    text: 'Swelling has disappeared, facial contours are tightened, the face looks slimmer and younger.',
+    title: 'Radiant look in just 2 months',
+    text: ['Eyes appear less sunken and more open',
+      'Under-eye bags and dark circles have diminished',
+      'Deep facial wrinkles have smoothed out',
+      'Tension has disappeared, enhancing facial proportions'],
     id: 1,
     image: ImageReviews1,
   },
   {
-    text: 'Swelling has disappeared from the face, the face has become more even and firm, the double chin has diminished, nasolabial folds have reduced, dark circles under the eyes have lessened, and the face looks younger and more open.',
+    title: 'Refreshed gaze',
+    text: ['Wrinkles have smoothed out, and the eyelids have lifted',
+      'Facial asymmetry has reduced, and contours have improved',
+      'The tip of the nose appears more refined',
+      'Lips have fuller and more defined',
+      'Skin tone has become more radiant'],
     id: 2,
     image: ImageReviews2,
   },
   {
-    text: 'Swelling has disappeared from the face, making it look younger and slimmer.',
+    title: 'Smooth forehead without injections',
+    text: ['Deep forehead wrinkles and nasolabial folds have softened',
+      'Upper eyelid creases have diminished',
+      'Tension in the corners of the lips and overall puffiness have reduced',
+      'The face appears more lifted and expressive'],
     id: 3,
     image: ImageReviews3,
   },
   {
-    text: 'Wrinkles have smoothed out, the gaze has become more open, the facial contours have tightened, and the face looks younger.',
+    title: 'The face regained balance',
+    text: ['Lifted eyebrows and upper eyelids, resulting in a more open and refreshed gaze.',
+      'Smoothed wrinkles around the eyes, forehead, between the eyebrows, and on the neck.',
+      'Improved facial asymmetry, including the alignment of eyebrows and eyes.'],
     id: 4,
     image: ImageReviews4,
   },
   {
-    text: 'Facial contours are more sculpted, with improved symmetry and reduced puffiness. The skin appears smoother, and the overall face looks rejuvenated and more youthful.',
+    title: 'The best version of yourself',
+    text: ['Skull shape and facial proportions have improved',
+      'Brows and eyelids have lifted, making the eyes appear more open',
+      'The tip of the nose looks more refined',
+     ' Lip shape and volume have enhanced'],
     id: 5,
     image: ImageReviews5,
   },
   {
-    text: 'Swelling has disappeared from the face, the belly has reduced, the double chin has diminished, posture has improved, and the face looks younger.',
+    title: 'Tension has left the face',
+    text: ['Eyebrows and eyelids have lifted.',
+      'Frown lines have smoothed out.',
+      'Forehead skin has become even and relaxed.',
+      'Dark circles under the eyes have faded.',
+      'The gaze has become more open and refreshed.'],
     id: 6,
     image: ImageReviews6,
   }
@@ -60,18 +86,18 @@ const SectionBeforeAfter = () => {
   return (
     <>
       <Swiper
-        spaceBetween={20}
+        spaceBetween={30}
         slidesPerView="auto"
         modules={[Navigation]}
         breakpoints={{
           800: {
-            spaceBetween: 15
+            spaceBetween: 30
           },
           540: {
             spaceBetween: 10
           },
           320: {
-            spaceBetween: 10
+            spaceBetween: 5
           }
         }}
         navigation={{
@@ -81,14 +107,26 @@ const SectionBeforeAfter = () => {
         className="animate-fadeIn font-lato !py-[20px] !my-[-20px]"
       >
         {reviewsData.map(r => (
-          <SwiperSlide key={r.id} className="relative !w-[28.49vw] !h-[20.10vw] rounded-[2.08vw] overflow-hidden shadow-cardShadow sm:rounded-[10.26vw] sm:!w-[74.74vw] sm:!h-[64.10vw]">
-            <Image
-              src={r.image}
-              fill
-              sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 28.31vw"
-              alt="image"
-              className="object-cover"
-            />
+          <SwiperSlide key={r.id} className="relative !w-[20.2vw] !h-[26.20vw] p-[1.04vw] bg-white rounded-[2.08vw] overflow-hidden border border-[#F2F2F2] sm:p-[5.13vw] sm:rounded-[10.26vw] sm:!h-auto sm:!w-[90.74vw] ">
+            <div className="relative w-full h-[12.50vw] sm:h-[61.54vw] overflow-hidden sm:rounded-[5.13vw]">
+              <Image
+                src={r.image}
+                fill
+                sizes="(max-width: 640px) 100%, (max-width: 1024px) 50vw, 28.31vw"
+                alt="image"
+                className="object-cover sm:object-fill"
+              />
+            </div>
+            <div className="pt-[0.63vw] text-[4A4A4A] space-y-[0.72vw] sm:pt-[3.08vw]">
+              <p className="font-semibold text-[1.04vw] sm:text-[4.10vw]">{r.title}</p>
+              <ul className="list-disc pl-[1.04vw] sm:pl-[5.04vw]">
+                {r.text.map((item,index) => {
+                  return (
+                    <li key={index} className="text-[0.83vw] font-regular list-disc sm:text-[3.59vw]" >{item}</li>
+                  )
+                })}
+              </ul>
+            </div>
           </SwiperSlide>
         ))}
         <div
