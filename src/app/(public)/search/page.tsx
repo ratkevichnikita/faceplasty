@@ -8,6 +8,8 @@ import IconBack from '@/../public/icons/icon-arrow-back.svg';
 import { useSearchParams } from 'next/navigation';
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 
+export const dynamic = 'force-dynamic';
+
 const Page = () => {
   const [query, setQuery] = useState<string | null>(null);
   const searchParams = useSearchParams();
