@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense } from 'react';
 import SearchContent from "@/widgets/SearchPage/SearchContent";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,15 +8,9 @@ import IconBack from '@/../public/icons/icon-arrow-back.svg';
 import { useSearchParams } from 'next/navigation';
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 
-export const dynamic = 'force-dynamic';
-
-const Page = () => {
-  const [query, setQuery] = useState<string | null>(null);
+const SearchPageContent = () => {
   const searchParams = useSearchParams();
-
-  useEffect(() => {
-    setQuery(searchParams.get('query'));
-  }, [searchParams]);
+  const query = searchParams.get('query');
 
   if (!query) {
     return (
@@ -42,7 +36,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -66,5 +60,11 @@ const Page = () => {
     </div>
   );
 };
+
+const Page = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <SearchPageContent />
+  </Suspense>
+);
 
 export default Page;
