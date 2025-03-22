@@ -7,7 +7,7 @@ import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 import {enhanceProductsWithData} from "@/shared/helpers";
 
 interface ComponentProps {
-  query: string
+  query: string | null
 }
 
 const SearchContent:FC<ComponentProps> = ({query}) => {
