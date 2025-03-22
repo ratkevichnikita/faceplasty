@@ -9,7 +9,7 @@ import { useSearchParams } from 'next/navigation';
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 
 const Page = () => {
-  const [query, setQuery] = useState(null);
+  const [query, setQuery] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
   useEffect(() => {
