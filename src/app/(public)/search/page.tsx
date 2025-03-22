@@ -10,7 +10,7 @@ import { useSearchParams } from 'next/navigation';
 //   searchParams: Promise<{ [key: string]: string }>
 // }
 
-const Page = async () => {
+const Page = () => {
   // const { query } = await searchParams;
   const searchParams = useSearchParams();
   const query = searchParams.get('query');
