@@ -17,7 +17,7 @@ const SearchContent:FC<ComponentProps> = ({query}) => {
   const getProducts = async () => {
     setLoading(true)
     try {
-      const response = await getCoursesList("98");
+      const response = await  getCoursesList("150");
       if(response) {
         const updatedProducts = enhanceProductsWithData(response);
         setProducts(updatedProducts)
@@ -32,6 +32,7 @@ const SearchContent:FC<ComponentProps> = ({query}) => {
 
   useEffect(() => {
     if(!products && query) {
+      console.log('1')
       getProducts()
     }
   }, [query])
