@@ -21,12 +21,16 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mindbodyface.com'),
   title: "Mindbodyface | Medically proven methods and techniques to look younger",
   description: "A concentrate of the best Faceplasty techniques to combat swellings, wrinkles and facial asymmetry.",
   icons: {
     icon: '/icon.ico',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://mindbodyface.com',
     title: "Mindbodyface | Medically proven methods and techniques to look younger",
     description: "A concentrate of the best Faceplasty techniques to combat swellings, wrinkles and facial asymmetry.",
     images: [
@@ -37,17 +41,18 @@ export const metadata: Metadata = {
         alt: 'Mindbodyface',
       },
     ],
+    siteName: 'Mindbodyface',
   },
 };
 
-export default function RootLayout({children}: Readonly<{
+export default function RootLayout({
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-    <body
-      className={`${lato.variable} ${montserrat.variable} ${rubik.variable} antialiased`}
-    >
+    <body className={`${lato.variable} ${montserrat.variable} ${rubik.variable} antialiased`}>
     {children}
     </body>
     </html>

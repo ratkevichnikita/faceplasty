@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, {Suspense} from 'react';
 import SearchContent from "@/widgets/SearchPage/SearchContent";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,8 +8,9 @@ import IconBack from '@/../public/icons/icon-arrow-back.svg';
 
 import CardProductSkeleton from "@/widgets/CardProduct/CardProductSkeleton";
 import {useSearchParams} from "next/navigation";
+import Spinner from "@/widgets/Spinner";
 
-const Page = () => {
+const SearchPageContent = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get('query');
 
@@ -61,5 +62,17 @@ const Page = () => {
     </div>
   );
 };
+
+const Page = () => (
+  <Suspense fallback={
+    <div className="py-[5.21vw] sm:py-[7.69vw]">
+      <div className="container">
+        <Spinner color="black" variant={"default"} />
+      </div>
+    </div>
+  }>
+    <SearchPageContent />
+  </Suspense>
+);
 
 export default Page;

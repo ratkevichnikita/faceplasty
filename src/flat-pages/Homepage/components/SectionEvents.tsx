@@ -91,8 +91,8 @@ const SectionEvents:FC<ComponentProps> = ({events}) => {
                     <div className="space-y-[0.52vw] sm:space-y-[2.56vw]">
                       <p
                         className="font-semibold text-[0.83vw] sm:text-[4.10vw] min-h-[24px] sm:line-clamp-2">{item.name}</p>
-                      <p className="text-[0.73vw] leading-[1.2em] sm:text-[3.59vw] line-clamp-2"
-                         dangerouslySetInnerHTML={{__html: item.description ?? ''}}/>
+                      {/*<p className="text-[0.73vw] leading-[1.2em] sm:text-[3.59vw] line-clamp-2"*/}
+                      {/*   dangerouslySetInnerHTML={{__html: item.description ?? ''}}/>*/}
                     </div>
                     <button
                       onClick={() => setModalActive(item.id)}
