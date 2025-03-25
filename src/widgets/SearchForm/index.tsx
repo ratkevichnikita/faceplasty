@@ -5,7 +5,7 @@ import Image from "next/image";
 import IconSearch from '@/../public/icons/icon-search.svg';
 import clsx from "clsx";
 import {FC} from "react";
-import {useAppStore} from "@/shared/store/AppStore";
+// import {useAppStore} from "@/shared/store/AppStore";
 
 type SearchFormValues = {
   search: string;
@@ -17,7 +17,7 @@ interface ComponentProps {
 }
 
 export const SearchForm:FC<ComponentProps> = ({isExpanded,setIsExpanded}) => {
-  const {setSearch} = useAppStore()
+  // const {setSearch} = useAppStore()
   const { register, handleSubmit, watch, formState: { errors } } = useForm<SearchFormValues>();
   const router = useRouter();
 
@@ -25,9 +25,9 @@ export const SearchForm:FC<ComponentProps> = ({isExpanded,setIsExpanded}) => {
 
   const onSubmit = (data: SearchFormValues) => {
     if (data.search.trim()) {
-      setSearch(data.search.toLowerCase())
-      router.push('/search')
-      // router.push(`/search?query=${encodeURIComponent(data.search.toLowerCase())}`);
+      // setSearch(data.search.toLowerCase())
+      // router.push('/search')
+      router.push(`/search?query=${encodeURIComponent(data.search.toLowerCase())}`);
     }
   };
 
