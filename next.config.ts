@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
     domains: ['cdn.accelonline.io'],
     unoptimized: true,
   },
-  // output: 'export',
-  // trailingSlash: false,
+  output: 'export',
+  trailingSlash: false,
 };
 
 export default nextConfig;
