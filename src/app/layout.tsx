@@ -72,7 +72,7 @@ export default function RootLayout({
             `,
         }}
       />
-      <title>"Mindbodyface | Medically proven methods and techniques to look younger"</title>
+      <title>&quot;Mindbodyface | Medically proven methods and techniques to look younger&quot;</title>
     </Head>
     <body className={`${lato.variable} ${montserrat.variable} ${rubik.variable} antialiased`}>
     {children}
