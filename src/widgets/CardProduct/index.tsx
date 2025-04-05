@@ -90,11 +90,11 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
           }
           {linkId && (
             <Link
-              href={'https://faceplasty.online/'+linkId}
+              href={'https://fp-platform.online/'+linkId}
               target="_blank"
               className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[11.67vw] h-[3.13vw] block  ml-auto  border border-[#00000014] sm:gap-[2.56vw] sm:h-[14.62vw] sm:w-full"
             >
-              <span className="font-semibold text-[0.83vw] text-center uppercase sm:text-[4.10vw]">Jump to course</span>
+              <span className="font-semibold text-[0.83vw] text-center uppercase sm:text-[4.10vw]">Learn more</span>
               <span className="rounded-full flex items-center justify-center bg-purple size-[2.08vw] sm:size-[5.13vw]">
                 <span className="w-[0.89vw] h-[0.63vw] transition-transform duration-300 group-hover:rotate-[45deg] sm:w-[2.05vw] sm:h-[1.7vw]">
                   <svg width="100%" height="100%" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
