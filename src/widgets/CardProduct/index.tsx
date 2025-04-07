@@ -1,4 +1,5 @@
-import React, {FC} from 'react';
+'use client'
+import React, {FC, useEffect, useState} from 'react';
 import Image from "next/image";
 import IconStar from '@/../public/icons/icon-star.svg';
 import IconStudent from '@/../public/icons/icon-student.svg';
@@ -16,6 +17,7 @@ interface ComponentProps {
 
 const CardProduct:FC<ComponentProps> = ({product}) => {
   const {setWidgetModal,setTrialModal} = useAppStore()
+  const [utmParams, setUtmParams] = useState({});
   const imageUrl = product.image?.cloudKey ? process.env.NEXT_PUBLIC_MEDIA_ORIGIN + `${product.image.cloudKey}` : ImageNoImg.src
   const widgetId = extractWidgetId(product?.internalName ?? '')
   const linkId = extractLinkId(product?.internalName ?? '')
@@ -23,6 +25,23 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
   const buyProductHandle = (widgetId: string) => {
     setWidgetModal({isWidgetModalActive:true, isWidgetModalId:widgetId})
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      const utmParts: string[] = [];
+
+      utmKeys.forEach(key => {
+        const value = params.get(key);
+        if (value) {
+          utmParts.push(`${key}=${encodeURIComponent(value)}`);
+        }
+      });
+
+      setUtmParams(utmParts.length > 0 ? `?${utmParts.join('&')}` : '');
+    }
+  }, []);
 
   return (
     <div className="animate-fadeIn shrink-0 w-full relative rounded-[2.08vw] max-w-[20.31vw] overflow-hidden border border-[#00000014] shadow-cardShadow sm:max-w-full sm:rounded-[10.26vw]">
@@ -90,7 +109,7 @@ const CardProduct:FC<ComponentProps> = ({product}) => {
           }
           {linkId && (
             <Link
-              href={'https://fp-platform.online/'+linkId}
+              href={'https://fp-platform.online/'+linkId+utmParams}
               target="_blank"
               className="flex items-center group justify-center gap-[0.83vw] rounded-full w-[11.67vw] h-[3.13vw] block  ml-auto  border border-[#00000014] sm:gap-[2.56vw] sm:h-[14.62vw] sm:w-full"
             >
