@@ -6,7 +6,7 @@ import Footer from "@/widgets/Footer";
 import TrialModal from "@/widgets/Modals/TrialModal/index";
 import WidgetModal from "@/widgets/Modals/WidgetModal";
 import MenuModal from "@/widgets/Modals/MenuModal";
-export const revalidate = 5
+export const revalidate = 20
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
